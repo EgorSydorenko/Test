@@ -1,0 +1,17 @@
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll.config
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.pdb
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll.config
+C:\Users\06621\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll.config
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\bin\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\ImageController\obj\Debug\ImageController.csprojResolveAssemblyReference.cache

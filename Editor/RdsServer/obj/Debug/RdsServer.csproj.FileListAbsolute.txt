@@ -1,0 +1,16 @@
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.dll.config
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.pdb
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.dll.config
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\RdsServer.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\ImageController.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.pdb

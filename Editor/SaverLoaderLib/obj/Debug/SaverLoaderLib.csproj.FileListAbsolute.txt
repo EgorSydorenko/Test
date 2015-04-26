@@ -1,0 +1,15 @@
+C:\Users\06591\Documents\Visual Studio 2012\Projects\C#\CommandProject\SFD_OFD\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+C:\Users\06591\Documents\Visual Studio 2012\Projects\C#\CommandProject\SFD_OFD\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+C:\Users\06591\Documents\Visual Studio 2012\Projects\C#\CommandProject\SFD_OFD\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+C:\Users\06591\Documents\Visual Studio 2012\Projects\C#\CommandProject\SFD_OFD\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+C:\Users\06591\Documents\Visual Studio 2012\Projects\C#\CommandProject\SFD_OFD\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
+D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache

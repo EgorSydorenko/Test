@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardEditor", "BoardEditor\BoardEditor.csproj", "{B4959979-E7B4-4DA5-8874-203A41E0B625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardClient", "BoardClient\BoardClient.csproj", "{3140D6C0-ED68-4091-8638-754E0AFAB605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardControls", "BoardControls\BoardControls.csproj", "{A50852FD-F7BF-46A9-B08D-E7F535762B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdsServer", "RdsServer\RdsServer.csproj", "{AB883327-1B8C-4F7B-9CCB-4CA52A9DD212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageController", "ImageController\ImageController.csproj", "{D7DBA2F5-6775-4B33-B3AA-A6937A68D3BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RdsClientControl", "RdsClientControl\RdsClientControl.csproj", "{F4DE4D29-104C-411D-A205-AA57ABF5286F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaverLoaderLib", "SaverLoaderLib\SaverLoaderLib.csproj", "{CA55F706-31FF-4FDE-95A4-F41BE3BA4808}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4959979-E7B4-4DA5-8874-203A41E0B625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4959979-E7B4-4DA5-8874-203A41E0B625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4959979-E7B4-4DA5-8874-203A41E0B625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4959979-E7B4-4DA5-8874-203A41E0B625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3140D6C0-ED68-4091-8638-754E0AFAB605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3140D6C0-ED68-4091-8638-754E0AFAB605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3140D6C0-ED68-4091-8638-754E0AFAB605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3140D6C0-ED68-4091-8638-754E0AFAB605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A50852FD-F7BF-46A9-B08D-E7F535762B12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A50852FD-F7BF-46A9-B08D-E7F535762B12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A50852FD-F7BF-46A9-B08D-E7F535762B12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A50852FD-F7BF-46A9-B08D-E7F535762B12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB883327-1B8C-4F7B-9CCB-4CA52A9DD212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB883327-1B8C-4F7B-9CCB-4CA52A9DD212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB883327-1B8C-4F7B-9CCB-4CA52A9DD212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB883327-1B8C-4F7B-9CCB-4CA52A9DD212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DBA2F5-6775-4B33-B3AA-A6937A68D3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DBA2F5-6775-4B33-B3AA-A6937A68D3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DBA2F5-6775-4B33-B3AA-A6937A68D3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DBA2F5-6775-4B33-B3AA-A6937A68D3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DE4D29-104C-411D-A205-AA57ABF5286F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DE4D29-104C-411D-A205-AA57ABF5286F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DE4D29-104C-411D-A205-AA57ABF5286F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DE4D29-104C-411D-A205-AA57ABF5286F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA55F706-31FF-4FDE-95A4-F41BE3BA4808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA55F706-31FF-4FDE-95A4-F41BE3BA4808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA55F706-31FF-4FDE-95A4-F41BE3BA4808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA55F706-31FF-4FDE-95A4-F41BE3BA4808}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,60 @@
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+D:\My itStep\Командный проект\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+C:\Users\06621\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+C:\Users\Студент\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
