@@ -14,3 +14,11 @@ C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\bin\Debug\ImageController
 C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
 C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.dll
 C:\Users\Egor\Desktop\_Board(Command)\Editor\RdsServer\obj\Debug\RdsServer.pdb
+d:\GitHub\Test\Editor\RdsServer\bin\Debug\RdsServer.dll.config
+d:\GitHub\Test\Editor\RdsServer\bin\Debug\RdsServer.dll
+d:\GitHub\Test\Editor\RdsServer\bin\Debug\RdsServer.pdb
+d:\GitHub\Test\Editor\RdsServer\bin\Debug\ImageController.dll
+d:\GitHub\Test\Editor\RdsServer\bin\Debug\ImageController.pdb
+d:\GitHub\Test\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
+d:\GitHub\Test\Editor\RdsServer\obj\Debug\RdsServer.dll
+d:\GitHub\Test\Editor\RdsServer\obj\Debug\RdsServer.pdb

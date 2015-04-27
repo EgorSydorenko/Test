@@ -1,19 +1,19 @@
 ﻿BoardEditor
 
 
-exe
+winexe
 C#
 .cs
-C:\Users\Egor\Desktop\_Board(Command)\Editor\BoardEditor\obj\Debug\
+d:\GitHub\Test\Editor\BoardEditor\obj\Debug\
 BoardEditor
 none
 false
 DEBUG;TRACE
-C:\Users\Egor\Desktop\_Board(Command)\Editor\BoardEditor\App.xaml
+d:\GitHub\Test\Editor\BoardEditor\App.xaml
 2174441758
 
 12-1005771936
-211035565864
+2181722172
 Editor.xaml;SettingWindow.xaml;
 images\splash.jpg
 False

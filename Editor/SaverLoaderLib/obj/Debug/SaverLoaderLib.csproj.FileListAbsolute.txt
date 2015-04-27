@@ -13,3 +13,8 @@ D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderL
 D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
 D:\My itStep\Командный проект\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
 C:\Users\06621\Desktop\_Board(Command)\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+d:\GitHub\Test\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+d:\GitHub\Test\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
