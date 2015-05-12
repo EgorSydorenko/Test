@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-d:\GitHub\Test\Editor\BoardEditor\obj\Debug\
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\
 BoardEditor
 none
 false
 DEBUG;TRACE
-d:\GitHub\Test\Editor\BoardEditor\App.xaml
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\App.xaml
 2174441758
 
 16-2087171920
-2181722172
+211017975098
 Editor.xaml;SettingWindow.xaml;
 images\splash.jpg
-True
+False
 

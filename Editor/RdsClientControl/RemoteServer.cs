@@ -245,6 +245,7 @@ namespace RdsClient
                             cl_data
                         );
                     }));
+                    Thread.Sleep(TimeSpan.FromSeconds(15));
                 }
             }
             catch (Exception ex)
@@ -400,7 +401,7 @@ namespace RdsClient
                     ms.SetLength(0);
                     int count = ns.Read(lg, 0, lg.Length);
                     
-                    ns.Write(answerBts, 0, answerBts.Length);
+                    //ns.Write(answerBts, 0, answerBts.Length);
                     var protocolLength = BitConverter.ToInt32(lg,0);
 
                     //Regex reg = new Regex("^([0-9]+)", RegexOptions.Multiline);
@@ -409,7 +410,7 @@ namespace RdsClient
                     //answer = new byte[protocolLength];
                     ms.SetLength(0);
                     answer = GetProtocol(ns, ms, protocolLength, imageClient, protocolLength);
-                    ns.Write(answerBts, 0, answerBts.Length);
+                    //ns.Write(answerBts, 0, answerBts.Length);
                     long allBytes = 0;
                     var firstPackage = Encoding.Unicode.GetString(answer);
                     var protocol = firstPackage.Substring(0, firstPackage.IndexOf('|'));

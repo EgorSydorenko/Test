@@ -33,9 +33,9 @@ namespace RdsServer
                 {
                     var length = BitConverter.GetBytes(protocol.Length);
                     ns.Write(length, 0, length.Length);
-                    ns.Read(bytes, 0, bytes.Length);
+                    //ns.Read(bytes, 0, bytes.Length);
                     ns.Write(protocol, 0, protocol.Length);
-                    ns.Read(bytes, 0, bytes.Length);
+                    //ns.Read(bytes, 0, bytes.Length);
                     ns.Write(newRgbValue.ToArray(), 0, newRgbValue.Count);
                     newRgbValue = GetReadyBytes(out protocol);
                     this.screenShotData = tmpShot;

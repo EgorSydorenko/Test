@@ -128,7 +128,13 @@ namespace BoardClient
                 ipConf = ConfigurationManager.AppSettings["ipBoard"];
                 portConf = ConfigurationManager.AppSettings["Port"];
             }
-            catch { }
+            catch (Exception ex)
+            {
+#if DEBUG
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+#endif
+            }
 
             IPAddress ipAddr = null;
             IPAddress.TryParse(ipConf, out ipAddr);
