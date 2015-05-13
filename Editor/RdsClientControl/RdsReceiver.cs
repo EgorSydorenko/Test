@@ -46,6 +46,7 @@ namespace RdsClient
                 {
                     byte[] a = receiver.Receive(ref udpEndPoint);
                     string msg = Encoding.Unicode.GetString(a, 0, a.Length);
+                    Console.WriteLine(msg);
                     var server = new RemoteServer(msg);
                     if (!this.servers.ContainsKey(server.ipAddress))
                     {

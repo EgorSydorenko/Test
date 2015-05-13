@@ -171,17 +171,16 @@ namespace RdsClientControl
 
         public void ImageClick(object sender, MouseButtonEventArgs e)
         {
+            var key = (sender as Image).Tag.ToString();
             try
-            {
-                var key = (sender as Image).Tag.ToString();
+            {             
+                currentServer = this.servers[key];
+                currentServer.StartView();
                 this.ImgContainer.Visibility = Visibility.Hidden;
                 this.PanelScroll.Visibility = System.Windows.Visibility.Hidden;
                 this.PanelScroll.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 this.PanelScroll.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 this.PanelScroll.PanningMode = PanningMode.None;
-
-                currentServer = this.servers[key];
-                currentServer.StartView();
                 this.ScrollViewer.Visibility = Visibility.Visible;
                 this.ShowPanel.Visibility = Visibility.Visible;
 
@@ -190,7 +189,8 @@ namespace RdsClientControl
             }
             catch
             {
-
+                Console.WriteLine("Connection Error");
+                RdsControl.MainWind.DeletePicture(key);
             }
         }
 
@@ -508,7 +508,7 @@ namespace RdsClientControl
 
         }
 
-        public void DeletePicture()
+        public void DeletePicture(string ipAddress = "")
         {
             try
             {
@@ -516,9 +516,17 @@ namespace RdsClientControl
                 foreach (var child in ImageContainer.Children)
                 {
                     var tag = (child as Grid).Tag.ToString();
-                    if (tag == currentServer.ipAddress)
+                    if (currentServer != null)
+                        if (tag == currentServer.ipAddress)
+                        {
+                            currentGrid = (child as Grid);
+                        }
+                    if (!String.IsNullOrEmpty(ipAddress))
                     {
-                        currentGrid = (child as Grid);
+                        if (tag == ipAddress)
+                        {
+                            currentGrid = (child as Grid);
+                        }
                     }
                 }
 

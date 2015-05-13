@@ -25,6 +25,10 @@ namespace RdsClient
         public int controlPort { private set; get; }
         public int lowImagePort { private set; get; }
 
+        public static SortedList<string, string> ipAdresses ;
+
+        private static object slockObject;
+
         public int Number { set; get; }
 
         TcpClient lowPicsClient;
@@ -41,6 +45,11 @@ namespace RdsClient
         public ClientScreenShotData data { private set; get; }
         //Image img;
 
+        static RemoteServer() 
+        {
+            ipAdresses = new SortedList<string, string>();
+            slockObject = new object();
+        }
 
 
         public RemoteServer(string msg)
@@ -93,6 +102,7 @@ namespace RdsClient
                     grid.Height = 230;
                     grid.Width = 250;
                     grid.Tag = this.ipAddress;
+
                     RowDefinition gridRow2 = new RowDefinition();
                     gridRow2.Height = new GridLength(1, GridUnitType.Star);
                     RowDefinition gridRow1 = new RowDefinition();
@@ -188,7 +198,16 @@ namespace RdsClient
                     Grid.SetRow(canvas, 1);
                     grid.Children.Add(someImg);
                     grid.Children.Add(canvas);
-                    RdsControl.ImageContainer.Children.Add(grid);
+                    lock (slockObject)
+                    {
+                        RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                        
+                        RdsControl.ImageContainer.Children.Insert(ipAdresses.IndexOfValue(this.ipAddress), grid);
+                    }
+
+
+
+                    
 
                 }));
             }
@@ -208,7 +227,19 @@ namespace RdsClient
         public void StartView()
         {
             this.imageClient = new TcpClient(ipAddress, imagePort);
-            this.controlsClient = new TcpClient(ipAddress, controlPort);
+            Console.WriteLine("Cjtlbytybt ecnfyjdktyyj");
+            //var result = this.imageClient.BeginConnect(ipAddress, imagePort,null,null);
+            //var success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(2));
+            //if (!success)
+            //{
+            //    Console.WriteLine("Соединение не установлено");
+            //    throw new Exception("Connection Timeout");
+            //}
+            //Console.WriteLine("Соединение установлено");
+           // imageClient.SendTimeout = 10000;
+            //imageClient.ReceiveTimeout
+            this.controlsClient = new TcpClient(ipAddress, imagePort);
+
             imageTask.Start();
             controlTask.Start();
         }
@@ -229,6 +260,7 @@ namespace RdsClient
                     bytes = new byte[length];
                     ns.Read(bytes, 0, bytes.Length);
                     var firstPackage = Encoding.Unicode.GetString(bytes);
+                    Console.WriteLine(firstPackage);
                     var protocol = firstPackage.Substring(0, firstPackage.IndexOf('|'));
                     var protocolInfo = protocol.Split('x');
                     string commad = protocolInfo[0];
@@ -258,7 +290,7 @@ namespace RdsClient
                 {
                     RdsControl.SetMainImageNewPic.Dispatcher.Invoke(new Action(() =>
                     {
-                        RdsControl.MainWind.DeletePicture();
+                        RdsControl.MainWind.DeletePicture(ipAddress);
                         RdsControl.MainWind.CloseOutside();
                     }));
                     StopViewControl();
@@ -339,13 +371,13 @@ namespace RdsClient
                         }
                         ms.Write(bytes, 0, cnt);
                         allBytes += cnt;
-                        Console.WriteLine("AllBytes {0}, cnt {1}, fullPackageLength {2}",allBytes,cnt ,fullPackageLength);
+                       //Console.WriteLine("AllBytes {0}, cnt {1}, fullPackageLength {2}",allBytes,cnt ,fullPackageLength);
                     //} while (client.Available > 0);
                 }
-                Console.WriteLine("Exit");
+               //Console.WriteLine("Exit");
             }
             catch (Exception ex) 
-            { Console.WriteLine(); }
+            { Console.WriteLine(ex.Message); }
             byte[] fileBytes = new byte[ms.Length];
             ms.Position = 0;
             var answ = ms.Read(fileBytes, 0, (int)ms.Length);
@@ -371,10 +403,10 @@ namespace RdsClient
                     }
                     ms.Write(bytes, 0, cnt);
                     allBytes += cnt;
-                    Console.WriteLine("AllBytes {0}, cnt {1}, fullPackageLength {2}", allBytes, cnt, fullPackageLength);
+                    //Console.WriteLine("AllBytes {0}, cnt {1}, fullPackageLength {2}", allBytes, cnt, fullPackageLength);
                     //} while (client.Available > 0);
                 }
-                Console.WriteLine("Exit");
+                //Console.WriteLine("Exit");
             }
             catch (Exception ex)
             { Console.WriteLine(); }
@@ -463,6 +495,7 @@ namespace RdsClient
                         RdsControl.MainWind.DeletePicture();
                         RdsControl.MainWind.CloseOutside();
                     }));
+                    Console.WriteLine(ex.Message);
                     StopViewControl();
                 }
                 //MessageBox.Show(ex.Message);
@@ -482,7 +515,7 @@ namespace RdsClient
                 imageTask = new Thread(RunImages);
                 imageTask.IsBackground = true;
             }
-            catch { }
+            catch(Exception ex) { Console.WriteLine(ex.Message); }
         }
 
     }
