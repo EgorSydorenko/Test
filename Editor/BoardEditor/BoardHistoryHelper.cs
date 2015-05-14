@@ -38,7 +38,7 @@ namespace BoardEditor
 
         private Editor _editor;
 
-        private List<BoardData> _boards = new List<BoardData>();    //Коллекция состояний досок
+        private List<BoardData> _boards = new List<BoardData>();     //Коллекция состояний досок
 
         private int _currentBoard;                                  //Индекс активной доски
 
@@ -140,11 +140,17 @@ namespace BoardEditor
         /// <returns>Список Xaml разметор</returns>
         public List<string> GetXamlBoards()
         {
-            this.SaveBoard();
             List<string> result = new List<string>();
-            foreach (BoardData item in this._boards)
+            for (int i = 0; i < this._boards.Count; i++)
             {
-                result.Add(item.BoardXaml);
+                if (i == this.CurrentBoard)
+                {
+                    result.Add(XamlWriter.Save(this._editor.inkBoard));
+                }
+                else
+                {
+                    result.Add(this._boards[i].BoardXaml);
+                }
             }
             return result;
         }
@@ -170,6 +176,9 @@ namespace BoardEditor
         }
     }
 
+    /// <summary>
+    /// Сохраняет состояние доски(похоже на memento)
+    /// </summary>
     class BoardData
     {
         public string BoardXaml { get; set; }       //Xaml разметка доски

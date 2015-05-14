@@ -996,7 +996,6 @@ namespace BoardEditor
         {
             Console.Clear();
             Console.WriteLine("Test...");
-            SaverLoader.SaveByDefault(this._historyHelper.GetXamlBoards());
         }
 
         private void mnOpen_Click(object sender, RoutedEventArgs e)
