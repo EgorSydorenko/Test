@@ -53,6 +53,12 @@ namespace RdsClientControl
 
         public static BitmapSource Source { set; get; }
 
+        public delegate void OpenFullScren();
+
+        public event OpenFullScren FullScreen;
+
+        public event OpenFullScren CloseFullScreen;
+
 
         public static Image SetMainImageNewPic
         {
@@ -74,6 +80,7 @@ namespace RdsClientControl
             lastState = new MyWindowState();
 
             SetMainImageNewPic = this.ViewImage;
+
             //----------------------Height Animation Maximize
             heightB_Animation = new DoubleAnimation();
             heightB_Animation.From = 0;
@@ -186,6 +193,8 @@ namespace RdsClientControl
 
                 this.front_canvas.Visibility = System.Windows.Visibility.Visible;
                 this.RdsIp.Text = String.Format("Ip address:[{0}]", currentServer.ipAddress);
+                if (FullScreen != null)
+                    FullScreen();   
             }
             catch
             {
@@ -428,6 +437,9 @@ namespace RdsClientControl
                 }
                 if (isFullScreen)
                     FullScreen_Click(null, null);
+
+                if (CloseFullScreen != null)
+                    CloseFullScreen();   
         }
 
         private void Maximize_MouseDown(object sender, MouseButtonEventArgs e)

@@ -105,8 +105,8 @@ namespace BoardEditor
         private int _caretLineBeforeChanges = -1;                   //Индекс строки, в которой находится карректа
 
         private DockPanel dpRDS;
-        private DockPanel dpRef;
-
+        //private DockPanel dpRef;
+        private Grid dpRef;
         #endregion
 
         #region КОНСТРУКТОР
@@ -177,8 +177,10 @@ namespace BoardEditor
 
                 this.dpRDS = new DockPanel() { Name = "dpRDS", LastChildFill = true };
                 RdsControl rds = new RdsControl(this);
+                rds.FullScreen += rds_FullScreen;
+                rds.CloseFullScreen += rds_CloseFullScreen;
                 this.dpRDS.Children.Add(rds);
-                this.dpRef = this.FindName("dpBorad") as DockPanel;
+                this.dpRef = this.FindName("dpBorad") as /*DockPanel*/ Grid;
                 if (dpRef == null)
                 {
                     throw new ApplicationException("Сломалось!");
@@ -210,6 +212,20 @@ namespace BoardEditor
             }
         }
 
+        void rds_CloseFullScreen()
+        {
+            this.pTop.Visibility = System.Windows.Visibility.Visible;
+            this.pTopGrid.Height = new GridLength(30); 
+            this.goToBoard.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        void rds_FullScreen()
+        {
+            this.pTop.Visibility = System.Windows.Visibility.Collapsed;
+            this.pTopGrid.Height = new GridLength(0); 
+            this.goToBoard.Visibility = System.Windows.Visibility.Collapsed;
+        }
+
         #endregion
         
         #region СОБЫТИЯ ЭЛЕМЕНТОВ УПРАВЛЕНИЯ
@@ -225,7 +241,8 @@ namespace BoardEditor
             try
             {
                 this.CreateService();
-                this.Title = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+                //this.Title = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+                this.title.Text = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
                 this.btPlay.IsChecked = true;
             }
             catch (Exception ex)
@@ -234,7 +251,8 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                this.Title = String.Format("Teacher Board [Отключено]");
+                //this.Title = String.Format("Teacher Board [Отключено]");
+                this.title.Text = String.Format("Teacher Board [Отключено]");
                 this.btPlay.IsChecked = true;
             }
         }
@@ -242,8 +260,8 @@ namespace BoardEditor
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             base.OnClosing(e);
-
-            if (MessageBox.Show("Выйти?", "Внимание", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
+            if ((new MyMessageBox("Выйти?", MyMBType.OKCANCEL) { Owner = this }).ShowDialog() == false)
+            //if (MessageBox.Show("Выйти?", "Внимание", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
             {
                 e.Cancel = true;
                 return;
@@ -269,7 +287,7 @@ namespace BoardEditor
         {
             //to-do
             base.OnStateChanged(e);
-            if (this.WindowState == System.Windows.WindowState.Maximized && this.mnRDS.IsChecked)
+            if (this.WindowState == System.Windows.WindowState.Maximized && /*this.mnRDS.IsChecked*/ (bool)this.mnRDS.IsChecked)
             {
                 this.mnMain.Visibility = System.Windows.Visibility.Collapsed;
                 return;
@@ -388,7 +406,8 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Установка типа фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Установка типа фигуры", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+                //MessageBox.Show(ex.Message, "Установка типа фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -407,7 +426,8 @@ namespace BoardEditor
                 switch (name)
                 {
                     case "DeleteText":
-                        if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
+                        if ((new MyMessageBox("Очистить?", MyMBType.OKCANCEL) { Owner = this }).ShowDialog() == false) return;
+                        //if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
                         this.tbBoard.Text = "";
                         this.HighlightCurrentString();
                         break;
@@ -416,13 +436,16 @@ namespace BoardEditor
                         this.ResetClientsUpdate();
                         break;
                     case "DeleteShapes":
-                        if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
+                        if ((new MyMessageBox("Очистить?", MyMBType.OKCANCEL) { Owner = this }).ShowDialog() == false) return;
+
+                        //if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
                         this.ClearShapesFromBoard();
                         this.ShowShapesInList();
                         this.ResetClientsUpdate();
                         break;
                     case "DeleteAll":
-                        if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
+                        if ((new MyMessageBox("Очистить?", MyMBType.OKCANCEL) { Owner = this }).ShowDialog() == false) return;
+                        //if (MessageBox.Show("Очистить?", "Board", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel) { return; }
                         this._isSaveState = false;
                         this.tbBoard.Text = "";
                         this.HighlightCurrentString();
@@ -442,7 +465,8 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Удаление объектов", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+                //MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -485,7 +509,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Изменение цвета контура", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Изменение цвета контура", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Изменение цвета контура", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -513,7 +539,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Изменение цвета заливки", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Изменение цвета заливки", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Изменение цвета заливки", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -545,7 +573,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Изменение толщины контура", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Изменение толщины контура", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Изменение толщины контура", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -567,7 +597,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Изменение типа контура", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Изменение типа контура", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Изменение типа контура", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -594,6 +626,8 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
+                (new MyMessageBox(String.Format("{0} Изменение шрифта", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
                 MessageBox.Show(ex.Message, "Изменение шрифта", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -661,7 +695,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Управление досками", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("{0} Управление досками", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Управление досками", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -681,8 +717,10 @@ namespace BoardEditor
                 Console.WriteLine(ex.StackTrace);
 #endif
                 btnPlay.IsChecked = false;
-                this.Title = "Teacher Board [Отключено]";
-                MessageBox.Show(ex.Message, "WCF Сервис", MessageBoxButton.OK, MessageBoxImage.Warning);
+                //this.Title = "Teacher Board [Отключено]";
+                this.title.Text = "Teacher Board [Отключено]";
+                (new MyMessageBox(String.Format("{0} WCF Сервис", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+                //MessageBox.Show(ex.Message, "WCF Сервис", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -710,7 +748,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Начало рисования фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Начало рисования фигуры: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Начало рисования фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             } 
         } 
@@ -734,6 +774,8 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
+                    (new MyMessageBox(String.Format("Рисование фигуры: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
                     MessageBox.Show(ex.Message, "Рисование фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             } 
@@ -758,7 +800,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Завершение рисования фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Завершение рисования фигуры: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Завершение рисования фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             } 
         }
@@ -789,6 +833,7 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
+                (new MyMessageBox(String.Format("Завершение рисования фигуры: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
                 MessageBox.Show(ex.Message, "Завершение рисования фигуры", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -822,7 +867,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Выделение объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("Выделение объектов: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Выделение объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -904,7 +951,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Удаление объектов: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -923,7 +972,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Удаление объектов: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Удаление объектов", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -958,30 +1009,35 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Применение (сохранение) настроек", MessageBoxButton.OK, MessageBoxImage.Information);
+                (new MyMessageBox(String.Format("Применение (сохранение) настроек: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Применение (сохранение) настроек", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
         private void mnPanel_Click(object sender, RoutedEventArgs e)
         {
-            this.spRight.Visibility = (this.mnPanel.IsChecked == true) ? this.spRight.Visibility = System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
+            //this.spRight.Visibility = (this.mnPanel.IsChecked == true) ? this.spRight.Visibility = System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
         }
 
         private void mnAbout_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Window about = new Window()
-                {
-                    Title = "О программе",
-                    ResizeMode = System.Windows.ResizeMode.NoResize,
-                    Width = 400,
-                    Height = 250,
-                    WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner,
-                    Owner = this
-                };
-                about.Content = new About();
-                about.ShowDialog();
+                Window myabout = new MyAbout();
+                myabout.Owner = this;
+                myabout.ShowDialog();
+                //Window about = new Window()
+                //{
+                //    Title = "О программе",
+                //    ResizeMode = System.Windows.ResizeMode.NoResize,
+                //    Width = 400,
+                //    Height = 250,
+                //    WindowStartupLocation = System.Windows.WindowStartupLocation.CenterOwner,
+                //    Owner = this,
+                //};
+                //about.Content = new About();
+                //about.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -1015,7 +1071,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show("Не удалось открыть файл", "Открытие", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Не удалось открыть файл: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show("Не удалось открыть файл", "Открытие", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -1033,7 +1091,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show("Не удалось сохранить файл", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("Не удалось сохранить файл: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show("Не удалось сохранить файл", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -1050,16 +1110,38 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show("Не удалось сохранить файл", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("Не удалось сохранить файл: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show("Не удалось сохранить файл", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         private void mnRDS_Click(object sender, RoutedEventArgs e)
         {
-            if (mnRDS.IsChecked == true)
+            if (mnRDS.IsChecked == true || cbRDS.IsChecked == true)
             {
                 this.dpMain.Children.Remove(this.dpBorad);
                 this.dpMain.Children.Add(this.dpRDS);
+                /*
+                 * added
+                 * */
+                this.wHeight = this.Height;
+                this.wWidth = this.Width;
+                this.wTop = this.Top;
+                this.wLeft = this.Left;
+                this.Height = SystemParameters.VirtualScreenHeight;
+                this.Width = SystemParameters.VirtualScreenWidth;
+                this.Top = SystemParameters.VirtualScreenTop;
+                this.Left = SystemParameters.VirtualScreenLeft;
+                this.title.Text = "RDS Preview";
+                this.dpRDS.Margin = new Thickness(2);
+                this.cbRDS.IsChecked = true;
+                this.mnRDS.IsChecked = true;
+                this.goToBoard.Visibility = System.Windows.Visibility.Visible;
+                this.imgIcon.Source = new BitmapImage(new Uri("pack://application:,,,/BoardEditor;component/Pics/IconRDS.png"));
+                /*
+                 * end added
+                 * */
             }
             else
             {
@@ -1095,7 +1177,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Удаление фигур из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Удаление фигур из списка: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Удаление фигур из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -1114,7 +1198,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Выделение фигур из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Выделение фигур из списка: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Выделение фигур из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -1131,7 +1217,9 @@ namespace BoardEditor
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
 #endif
-                MessageBox.Show(ex.Message, "Работа со списком фигур", MessageBoxButton.OK, MessageBoxImage.Warning);
+                (new MyMessageBox(String.Format("Работа со списком фигур: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                //MessageBox.Show(ex.Message, "Работа со списком фигур", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -1157,7 +1245,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Переключение доски в списке", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Переключение доски в списке: {0}", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Переключение доски в списке", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -1170,7 +1260,9 @@ namespace BoardEditor
                 {
                     if (this._historyHelper.BoardCount <= 1)
                     {
-                        MessageBox.Show("Нельзя удалить все доски", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
+                        (new MyMessageBox("Нельзя удалить все доски", MyMBType.OK) { Owner = this }).ShowDialog();
+
+                        //MessageBox.Show("Нельзя удалить все доски", "Внимание", MessageBoxButton.OK, MessageBoxImage.Information);
                         return;
                     }
                     this._historyHelper.DeleteBoаrds(this.lbBoards.SelectedIndex);
@@ -1183,7 +1275,9 @@ namespace BoardEditor
                     Console.WriteLine(ex.Message);
                     Console.WriteLine(ex.StackTrace);
 #endif
-                    MessageBox.Show(ex.Message, "Удаление досок из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    (new MyMessageBox(String.Format("Удаление досок из списка", ex.Message), MyMBType.OK) { Owner = this }).ShowDialog();
+
+                    //MessageBox.Show(ex.Message, "Удаление досок из списка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
         }
@@ -1248,12 +1342,16 @@ namespace BoardEditor
             if (btnPlay.IsChecked == true)
             {
                 this.CreateService();
-                this.Title = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+                //this.Title = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+                this.title.Text = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+
             }
             else
             {
                 this._service.Close(TimeSpan.FromSeconds(1));
-                this.Title = "Teacher Board [Отключено]";
+                //this.Title = "Teacher Board [Отключено]";
+                this.title.Text = "Teacher Board [Отключено]";
+
             }
         }
 
@@ -1596,6 +1694,97 @@ namespace BoardEditor
             }
         }
 
+        #endregion
+
+        #region Added
+
+        private Double wHeight;
+        private Double wWidth;
+        private Double wTop;
+        private Double wLeft;
+
+        private void Move_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+        private void Min_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = System.Windows.WindowState.Minimized;
+        }
+        private void Resize_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (this.Height != SystemParameters.VirtualScreenHeight ||
+                    this.Width != SystemParameters.VirtualScreenWidth ||
+                        this.Top != SystemParameters.VirtualScreenTop ||
+                            this.Left != SystemParameters.VirtualScreenLeft)
+            {
+                this.Height = SystemParameters.VirtualScreenHeight;
+                this.Width = SystemParameters.VirtualScreenWidth;
+                this.Top = SystemParameters.VirtualScreenTop;
+                this.Left = SystemParameters.VirtualScreenLeft;
+            }
+            else
+            {
+                this.Width = this.MinWidth;
+                this.Height = this.MinHeight;
+                this.Top = SystemParameters.VirtualScreenHeight / 2 - this.Height / 2;
+                this.Left = SystemParameters.VirtualScreenWidth / 2 - this.Width / 2;
+            }
+            //if (this.Height != SystemParameters.WorkArea.Height ||
+            //        this.Width != SystemParameters.WorkArea.Width ||
+            //            this.Top != SystemParameters.WorkArea.Top ||
+            //                this.Left != SystemParameters.WorkArea.Left)
+            //{
+            //    this.Height = SystemParameters.WorkArea.Height;
+            //    this.Width = SystemParameters.WorkArea.Width;
+            //    this.Top = SystemParameters.WorkArea.Top;
+            //    this.Left = SystemParameters.WorkArea.Left;
+            //}
+            //else
+            //{
+            //    this.Width = this.MinWidth;
+            //    this.Height = this.MinHeight;
+            //    this.Top = SystemParameters.WorkArea.Height / 2 - this.Height / 2;
+            //    this.Left = SystemParameters.WorkArea.Width / 2 - this.Width / 2;
+            //}
+
+        }
+        private void tabClick(object sender, MouseButtonEventArgs e)
+        {
+            this.pMenu.Visibility = System.Windows.Visibility.Collapsed;
+            this.pTool.Visibility = System.Windows.Visibility.Collapsed;
+            this.pExtended.Visibility = System.Windows.Visibility.Collapsed;
+            this.tabMenu.Opacity = 1;
+            this.tabTools.Opacity = 1;
+            this.tabExtended.Opacity = 1;
+            switch ((sender as Label).Name)
+            {
+                case "tabMenu": this.pMenu.Visibility = System.Windows.Visibility.Visible; this.tabMenu.Opacity = 0.9; break;
+                case "tabTools": this.pTool.Visibility = System.Windows.Visibility.Visible; this.tabTools.Opacity = 0.9; break;
+                case "tabExtended": this.pExtended.Visibility = System.Windows.Visibility.Visible; this.tabExtended.Opacity = 0.9; break;
+            }
+        }
+        private void Close_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+        private void goToBoard_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.goToBoard.Visibility = System.Windows.Visibility.Collapsed;
+
+            this.cbRDS.IsChecked = false;
+            this.mnRDS.IsChecked = false;
+            this.dpMain.Children.Add(this.dpBorad);
+            this.dpMain.Children.Remove(this.dpRDS);
+            this.Height = this.wHeight;
+            this.Width = this.wWidth;
+            this.Top = this.wTop;
+            this.Left = this.wLeft;
+            this.Topmost = false;
+            this.imgIcon.Source = new BitmapImage(new Uri("pack://application:,,,/BoardEditor;component/Pics/IconBDR.png"));
+            this.title.Text = String.Format("Teacher Board [Трансляция: {0}:{1}]", this._ipServer, this._portServer);
+            this.tbBoard.Focus();
+        }
         #endregion
     } 
 }

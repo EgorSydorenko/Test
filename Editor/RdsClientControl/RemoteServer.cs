@@ -25,6 +25,7 @@ namespace RdsClient
         public int controlPort { private set; get; }
         public int lowImagePort { private set; get; }
 
+        public static int index;
         public static SortedList<string, string> ipAdresses ;
 
         private static object slockObject;
@@ -198,11 +199,29 @@ namespace RdsClient
                     Grid.SetRow(canvas, 1);
                     grid.Children.Add(someImg);
                     grid.Children.Add(canvas);
+                    int val = 0;
                     lock (slockObject)
                     {
-                        RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                        try
+                        {
+                            //Int32.TryParse(this.ipAddress.Split(".".ToArray(), StringSplitOptions.RemoveEmptyEntries).Last(), out val);
+                            RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                        }
+                        catch (Exception ex)
+                        {
+                            if (RemoteServer.ipAdresses[this.ipAddress] != null)
+                                {
+                                    //if(RemoteServer.ipAdresses.Keys.Contains())
+                                    RemoteServer.ipAdresses.Remove(this.ipAddress);
+                                    RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                                }
+                            
+                        }
+                        //RdsControl.ImageContainer.Children.Add(grid);
                         
-                        RdsControl.ImageContainer.Children.Insert(ipAdresses.IndexOfValue(this.ipAddress), grid);
+                        
+                        RdsControl.ImageContainer.Children.Insert(ipAdresses.IndexOfValue(ipAddress), grid);
+                        
                     }
 
 
@@ -227,7 +246,6 @@ namespace RdsClient
         public void StartView()
         {
             this.imageClient = new TcpClient(ipAddress, imagePort);
-            Console.WriteLine("Cjtlbytybt ecnfyjdktyyj");
             //var result = this.imageClient.BeginConnect(ipAddress, imagePort,null,null);
             //var success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(2));
             //if (!success)
@@ -238,7 +256,7 @@ namespace RdsClient
             //Console.WriteLine("Соединение установлено");
            // imageClient.SendTimeout = 10000;
             //imageClient.ReceiveTimeout
-            this.controlsClient = new TcpClient(ipAddress, imagePort);
+            this.controlsClient = new TcpClient(ipAddress, controlPort);
 
             imageTask.Start();
             controlTask.Start();

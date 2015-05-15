@@ -90,6 +90,12 @@
     <Compile Include="ClientInfo.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="DrawingHelper.cs" />
+    <Compile Include="MyAbout.xaml.cs">
+      <DependentUpon>MyAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyMessageBox.xaml.cs">
+      <DependentUpon>MyMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistryHelper.cs" />
     <Compile Include="SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
@@ -106,6 +112,18 @@
       <DependentUpon>Editor.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SettingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,6 +266,35 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Icon.png" />
+    <Resource Include="Pics\IconBDR.png" />
+    <Resource Include="Pics\IconRDS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Tool\Ellipse.png" />
+    <Resource Include="Pics\Tool\Line.png" />
+    <Resource Include="Pics\Tool\Marker.png" />
+    <Resource Include="Pics\Tool\Note.png" />
+    <Resource Include="Pics\Tool\Pencil.png" />
+    <Resource Include="Pics\Tool\Rect.png" />
+    <Resource Include="Pics\Tool\RectR.png" />
+    <Resource Include="Pics\Tool\Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Edit\DelAll.png" />
+    <Resource Include="Pics\Edit\DelMarker.png" />
+    <Resource Include="Pics\Edit\DelSelection.png" />
+    <Resource Include="Pics\Edit\DelShapes.png" />
+    <Resource Include="Pics\Edit\DelText.png" />
+    <Resource Include="Pics\Edit\Redo.png" />
+    <Resource Include="Pics\Edit\Selection.png" />
+    <Resource Include="Pics\Edit\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pics\Board\New.png" />
+    <Resource Include="Pics\Board\Play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

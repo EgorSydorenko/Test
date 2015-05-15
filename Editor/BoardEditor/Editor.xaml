@@ -4,324 +4,347 @@
         xmlns:cntrl="clr-namespace:BoardControls;assembly=BoardControls"
         xmlns:local="clr-namespace:BoardEditor"
         x:Class="BoardEditor.Editor"
-        Title="Teacher Board [Отключено]" Width="920" Height="600" SizeToContent="Height"
-        MinWidth="920" MinHeight="450" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" 
-        Icon="Images/WinIcon.png">
-    
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Teacher Board [Отключено]" Width="920" Height="620" MinWidth="1024" MinHeight="620" WindowStyle="None" 
+        BorderBrush="DeepPink" BorderThickness="1" AllowsTransparency="True" SnapsToDevicePixels="True" UseLayoutRounding="True"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" Background="#E8E8E8">
+
     <Window.Resources>
-        <Style x:Key="UndoRedo" TargetType="Button">
-            <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="False">
-                    <Setter Property="Opacity" Value="0.4"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+        <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">18</sys:Double>
     </Window.Resources>
 
     <Window.CommandBindings>
-        <CommandBinding Command="{x:Static ApplicationCommands.Undo}" 
-                        CanExecute="CommandBinding_CanUndo"  
-                        Executed="CommandBinding_ExecutedUndo"/>
-        <CommandBinding Command="{x:Static ApplicationCommands.Redo}" 
-                        CanExecute="CommandBinding_CanRedo" 
-                        Executed="CommandBinding_ExecutedRedo"/>
+        <CommandBinding Command="{x:Static ApplicationCommands.Undo}" CanExecute="CommandBinding_CanUndo" Executed="CommandBinding_ExecutedUndo"/>
+        <CommandBinding Command="{x:Static ApplicationCommands.Redo}" CanExecute="CommandBinding_CanRedo" Executed="CommandBinding_ExecutedRedo"/>
     </Window.CommandBindings>
-    
-    <DockPanel LastChildFill="True" Name="dpMain"
-               Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
-        <Menu DockPanel.Dock ="Top" Height="25" Name="mnMain">
-            <MenuItem Header="_Файл">
-                <MenuItem Header="Тест" Name="mnTest" Click="mnTest_Click" Visibility="Collapsed"/>
-                <MenuItem Header="Открыть..." Name="mnOpen" Click="mnOpen_Click"/>
-                <MenuItem Header="Сохранить" Name="mnSava" Click="mnSave_Click"/>
-                <MenuItem Header="Сохранить как..." Name="mnSaveAs" Click="mnSaveAs_Click"/>
-                <MenuItem Header="Настройки..." Name="mnSetting" Click="mnSetting_Click"/>
-                <Separator/>
-                <MenuItem Name="mnExit" Header="Выход" Click="mnExit_Click"/>
-            </MenuItem>
-            <MenuItem Header="_Правка">
-                <MenuItem Header="Отменить" Command="{x:Static ApplicationCommands.Undo}"/>
-                <MenuItem Header="Вернуть" Command="{x:Static ApplicationCommands.Redo}"/>
-                <Separator/>
-                <MenuItem Name="mnDeleteText" Header="Очистить текст" Click="btDelete_Click"/>
-                <MenuItem Name="mnDeleteNotes" Header="Очистить маркер" Click="btDelete_Click"/>
-                <MenuItem Name="mnDeleteShapes" Header="Очистить фигуры" Click="btDelete_Click"/>
-                <MenuItem Name="mnDeleteAll" Header="Очистить всё" Click="btDelete_Click"/>
-            </MenuItem>
-            <MenuItem Header="_Дополнительно">
-                <MenuItem Header="Дополнительная панель" Name="mnPanel" 
-                          IsCheckable="True" Click="mnPanel_Click"
-                          ToolTip="Показать список фигур и досок"/>
-                <MenuItem Header="Удалённое управление" Name="mnRDS" 
-                          IsCheckable="True" Click="mnRDS_Click"
-                          ToolTip="Удалённое управление клиентами"/>
-            </MenuItem>
-            <MenuItem Header="Справка">
-                <MenuItem Header="О программе" Name="mnAbout" Click="mnAbout_Click"/>
-            </MenuItem>
-        </Menu>
-        <DockPanel Name="dpBorad" LastChildFill="True">
-            <StatusBar DockPanel.Dock="Bottom" Height="22">
-                <Grid Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type StatusBar}}}" UseLayoutRounding="False" >
+
+    <Grid Name="pAll" MinWidth="1024">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" Name="pTopGrid"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Name="pTop" Height="30" MinWidth="1024" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"  Name="imgIcon" Source="Pics/IconBDR.png" Margin="5 0 0 0"/>
+                <Grid Grid.Column="1" MouseDown="Move_Click">
+                    <TextBlock Name="title" Grid.Column="0" Style="{StaticResource stTitle}"/>
+                </Grid>
+                <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Name="sbCoord">Координаты</TextBlock>
-                    <TextBlock Grid.Column="1" Name="sbTool">Инструмент: Ввод текста</TextBlock>
+                    <Label Grid.Column="0" Content="–" Style="{StaticResource stFuncBtns}" ToolTip="Свернуть" MouseDown="Min_Click"/>
+                    <Label Grid.Column="1" Content="*" Style="{StaticResource stFuncBtns}" ToolTip="Развернуть" MouseDown="Resize_Click"/>
+                    <Label Grid.Column="2" Content="X" Style="{StaticResource stFuncBtns}" ToolTip="Закрыть" MouseDown="Close_Click"/>
                 </Grid>
-            </StatusBar>
-            <ToolBarTray DockPanel.Dock="Top" Name="tbtTop" Height="30">
-                <ToolBar Name="tbBoards" Height="30" Band="0">
-                    <ToggleButton Name="btPlay" ToolTip="Вкл/выкл траснляцию доски" Click="btPlay_Click">
-                        <Image Source="Images/Play.png"/>
-                    </ToggleButton>
-                    <Separator Margin="5 0 5 0"/>
-                    <Button Name="btNewBoard" ToolTip="Новая доска" Width="30"
-                            Click="btBoard_Click">
-                        <Image Source="Images/NewBoard.png"/>
-                    </Button>
-                    <Separator Margin="0" Height="25" VerticalAlignment="Bottom"/>
-                    <Button Name="btFirstBoard" ToolTip="Первая доска" Visibility="Collapsed"
-                            Click="btBoard_Click">
-                        <Image Source="Images/FirstBoard.png"/>
-                    </Button>
-                    <Button Name="btPrevBoard" ToolTip="Предыдущая доска"
-                            Click="btBoard_Click">
-                        <Image Source="Images/PrevBoard.png"/>
-                    </Button>
-                    <Border BorderBrush="{x:Null}" Height="20">
-                        <TextBlock Name="tbCurrentBoard" ToolTip="Текущая доска"
-                               VerticalAlignment="Center" Margin="5 0 5 0"
-                               FontWeight="Bold" FontSize="18"/>
-                    </Border>
-                    <Button Name="btNextBoard" ToolTip="Следующая доска"
-                            Click="btBoard_Click">
-                        <Image Source="Images/NextBoard.png"/>
-                    </Button>
-                    <Button Name="btLastBoard" ToolTip="Последняя доска" Visibility="Collapsed"
-                            Click="btBoard_Click">
-                        <Image Source="Images/LastBoard.png"/>
-                    </Button>
-                    <Separator Margin="10 0 10 0"/>
-                    <Button Name="btUndo" ToolTip="Отменить изменения" Command="{x:Static ApplicationCommands.Undo}"
-                            Style="{StaticResource ResourceKey=UndoRedo}">
-                        <Image Source="Images/Undo.png"/>
-                    </Button>
-                    <Button Name="btRedo" ToolTip="Вернуть изменения" Command="{x:Static ApplicationCommands.Redo}"
-                            Style="{StaticResource ResourceKey=UndoRedo}">
-                        <Image Source="Images/Redo.png"/>
-                    </Button>
-                </ToolBar>
-                <ToolBar Name="tbShapeSetting" Height="30" IsEnabled="False" Band="0">
-                    <TextBlock VerticalAlignment="Center" Margin="0 0 10 0" FontWeight="Bold">Цвет:</TextBlock>
-                    <cntrl:BrushComboBox x:Name="cbStrokeColor" Width="40" IsEmptyColor="False" SelectedIndex="7"
-                                         ColorChanged="cbStrokeColor_ColorChanged"
-                                         GotFocus="cbSetting_GotFocus"/>
-                    <TextBlock VerticalAlignment="Center" Margin="10 0 10 0" FontWeight="Bold">Фон:</TextBlock>
-                    <cntrl:BrushComboBox x:Name="cbFillColor" Width="40" IsEmptyColor="True"
-                                         ColorChanged="cbFillColor_ColorChanged"
-                                         GotFocus="cbSetting_GotFocus"/>
-                    <TextBlock VerticalAlignment="Center" Margin="10 0 10 0" FontWeight="Bold">Толщина:</TextBlock>
-                    <cntrl:ThicknessComboBox x:Name="cbThickness" Width="60"
-                                             SelectionChanged="cbThickness_SelectionChanged"/>
-                    <TextBlock VerticalAlignment="Center" Margin="10 0 10 0" FontWeight="Bold">Тип:</TextBlock>
-                    <cntrl:DashComboBox x:Name="cbDash" Width="100"
-                                        SelectionChanged="cbDash_SelectionChanged"/>
-                </ToolBar>
-                <ToolBar Name="tbFontSetting" Height="30" IsEnabled="False" Band="0">
-                    <TextBlock VerticalAlignment="Center" Margin="10 0 10 0" FontWeight="Bold" Visibility="Collapsed">Шрифт:</TextBlock>
-                    <cntrl:FontComboBox x:Name="cbFontFamaly" Width="120"
-                                        ToolTip="Шрифт надписи"
-                                        SelectionChanged="cbFont_SelectionChanged"
-                                        GotFocus="cbSetting_GotFocus"/>
-                    <TextBlock VerticalAlignment="Center" Margin="10 0 10 0" FontWeight="Bold" Visibility="Collapsed">Размер:</TextBlock>
-                    <ComboBox Name="cbFontSize" Width="40" SelectedIndex="6"
-                              ToolTip="Размер шрифта надписи"
-                              SelectionChanged="cbFont_SelectionChanged"
-                              GotFocus="cbSetting_GotFocus">
-                        <ComboBoxItem>12</ComboBoxItem>
-                        <ComboBoxItem>14</ComboBoxItem>
-                        <ComboBoxItem>16</ComboBoxItem>
-                        <ComboBoxItem>18</ComboBoxItem>
-                        <ComboBoxItem>20</ComboBoxItem>
-                        <ComboBoxItem>22</ComboBoxItem>
-                        <ComboBoxItem>24</ComboBoxItem>
-                        <ComboBoxItem>26</ComboBoxItem>
-                        <ComboBoxItem>28</ComboBoxItem>
-                        <ComboBoxItem>30</ComboBoxItem>
-                        <ComboBoxItem>32</ComboBoxItem>
-                        <ComboBoxItem>34</ComboBoxItem>
-                        <ComboBoxItem>36</ComboBoxItem>
-                        <ComboBoxItem>38</ComboBoxItem>
-                        <ComboBoxItem>40</ComboBoxItem>
-                        <ComboBoxItem>42</ComboBoxItem>
-                        <ComboBoxItem>44</ComboBoxItem>
-                        <ComboBoxItem>46</ComboBoxItem>
-                        <ComboBoxItem>48</ComboBoxItem>
-                        <ComboBoxItem>50</ComboBoxItem>
-                        <ComboBoxItem>52</ComboBoxItem>
-                        <ComboBoxItem>54</ComboBoxItem>
-                        <ComboBoxItem>56</ComboBoxItem>
-                        <ComboBoxItem>58</ComboBoxItem>
-                        <ComboBoxItem>60</ComboBoxItem>
-                        <ComboBoxItem>62</ComboBoxItem>
-                        <ComboBoxItem>64</ComboBoxItem>
-                        <ComboBoxItem>66</ComboBoxItem>
-                        <ComboBoxItem>68</ComboBoxItem>
-                        <ComboBoxItem>70</ComboBoxItem>
-                        <ComboBoxItem>72</ComboBoxItem>
-                    </ComboBox>
-                </ToolBar>
-            </ToolBarTray>
-            <Grid DockPanel.Dock="Right" Name="spRight" 
-                  Width="100" Height="{Binding ActualHeight, ElementName=scvBoard}" 
-                  Visibility="Collapsed">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition />
-                    <RowDefinition Height="20"/>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-            
-                <TextBlock Grid.Row="0" Text="Список фигур"
-                    HorizontalAlignment="Center" FontWeight="Bold"/>
-                <ListBox Grid.Row="1" Name="lbShapes" SelectionMode="Extended"
-                         ScrollViewer.VerticalScrollBarVisibility="Visible"
-                         ScrollViewer.CanContentScroll="True"
-                         ToolTip="Для редактирования/удаления выберете фигуру(ы)"
-                         SelectionChanged="lbShapes_SelectionChanged"
-                         KeyDown="lbShapes_KeyDown"
-                         GotFocus="lbShapes_GotFocus"/>
-                <TextBlock Grid.Row="2" Text="Доски"
-                           HorizontalAlignment="Center" FontWeight="Bold"/>
-                <ListBox Grid.Row="3" Name="lbBoards"
-                         ToolTip="Для удаления выберете доску и нажмите Delete на клавиатуре"
-                         SelectionChanged="lbBoards_SelectionChanged"
-                         KeyDown="lbBoards_KeyDown"/>
             </Grid>
-            <ToolBarTray DockPanel.Dock="Left" Name="tbtLeft" Width ="70" Orientation="Vertical" IsLocked="True">
-                <ToolBar Name="tbInput" Width="35">
-                    <RadioButton GroupName="InputModes" Name="rbType"
-                                 ToolTip="Печать текста"
-                                 IsChecked="True" 
-                                 Tag="{x:Static Member=InkCanvasEditingMode.None}" 
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Type.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbInk"
-                                 ToolTip="Маркер"
-                                 Tag="{x:Static Member=InkCanvasEditingMode.Ink}" 
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Note.png" Margin="1"/>
-                    </RadioButton>
-                    <Separator Margin="0 10 0 10"/>
-                    <RadioButton GroupName="InputModes" Name="rbPen" 
-                                 ToolTip="Фигуры: Полилиния(карандаш)"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.POLYLINE}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Pencil.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbLine"
-                                 ToolTip="Фигуры: Прямая"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.LINE}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Line.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbRect" 
-                                 ToolTip="Фигуры: Прямоугольник"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.RECTANGLE}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Rectangle.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbRoundRect"
-                                 ToolTip="Фигуры: Закруглённый прямоугольник"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.ROUND_RECTANGLE}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Rounded.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbEllipse"
-                                 ToolTip="Фигуры: Элипс"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.ELLIPSE}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Ellipse.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbLabel"
-                                 ToolTip="Фигуры: Надпись"
-                                 Tag ="{x:Static local:BOADR_DRAW_SHAPE.LABEL}"
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Label2.png" Margin="1"/>
-                    </RadioButton>
-                </ToolBar>
-                <ToolBar Name="tbEdit" Width="35" Band="1">
-                    <RadioButton GroupName="InputModes" Name="rbSelect"
-                                 ToolTip="Редактирование: Выделение заметок и фигур для редактирования/удаления"
-                                 Tag="{x:Static Member=InkCanvasEditingMode.Select}" 
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Select.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbErase" Visibility="Collapsed"
-                                 ToolTip="Редактирование: Ластик для заметок (для удаления фигуры выделете фигуру и нажите DEL)"
-                                 Tag="{x:Static Member=InkCanvasEditingMode.EraseByPoint}" 
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Erase.png" Margin="1"/>
-                    </RadioButton>
-                    <RadioButton GroupName="InputModes" Name="rbRemove"
-                                 ToolTip="Редактирование: Удаление маркера (для удаления фигуры выделете фигуру и нажите DEL)"
-                                 Tag="{x:Static Member=InkCanvasEditingMode.EraseByStroke}" 
-                                 Checked="RadioButton_Checked">
-                        <Image Source="images/Remove.png" Margin="1"/>
-                    </RadioButton>
-                    <Separator Margin="0 10 0 10"/>
-                    <Button Name="btDeleteText" ToolTip="Удалить весь текст" Click="btDelete_Click">
-                        <Image Source="images/DeleteText.png"/>
-                    </Button>
-                    <Button Name="btDeleteNotes" ToolTip="Удалить маркер" Click="btDelete_Click">
-                        <Image Source="images/DeleteNotes.png"/>
-                    </Button>
-                    <Button Name="btDeleteShapes" ToolTip="Удалить все фигуры" Click="btDelete_Click">
-                        <Image Source="images/DeleteShape.png"/>
-                    </Button>
-                    <Button Name="btDeleteAll" ToolTip="Очистить доску" Click="btDelete_Click">
-                        <Image Source="images/DeleteAll.png"/>
-                    </Button>
-                </ToolBar>
-            </ToolBarTray>
-            <ScrollViewer Name="scvBoard" HorizontalScrollBarVisibility="Auto" 
-                          VerticalScrollBarVisibility="Auto" Focusable="False">
-                <InkCanvas x:Name="inkBoard" EditingMode="None" Margin="5"
-                           Width="800" Height="500"
-                           MouseDown="inkBoard_MouseDown" 
-                           MouseMove="inkBoard_MouseMove" 
-                           MouseUp="inkBoard_MouseUp"
-                           MouseEnter="inkBoard_MouseEnter"
-                           MouseLeave="inkBoard_MouseLeave"
-                           PreviewKeyUp="inkBoard_PreviewKeyUp"
-                           PreviewKeyDown="inkBoard_PreviewKeyDown"
-                           SelectionChanged="inkBoard_SelectionChanged"
-                           StrokeCollected="inkBoard_StrokeCollected"
-                           StrokeErased="inkBoard_StrokeErased"
-                           SelectionMoved="inkBoard_SelectionMoved"
-                           SelectionResized="inkBoard_SelectionResized">
-                    <InkCanvas.DefaultDrawingAttributes>
-                        <DrawingAttributes FitToCurve="True" IsHighlighter="True"/>
-                    </InkCanvas.DefaultDrawingAttributes>
-                    <InkCanvas.Background>
-                        <SolidColorBrush Color="White" Opacity="0"/>
-                    </InkCanvas.Background>
-                    <cntrl:BoardTextBox x:Name="tbBoard" TabSize="4"
-                                        BorderThickness="0"
-                                        FontFamily="Courier New" 
-                                        FontSize="24"
-                                        FontWeight="Bold" 
-                                        Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}" 
-                                        Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}" 
-                                        GotFocus="tbBoard_GotFocus" TextChanged="tbBoard_TextChanged"
-                                        LostFocus="tbBoard_LostFocus" SelectionChanged="tbBoard_SelectionChanged">
-                    </cntrl:BoardTextBox>
-                </InkCanvas>
-            </ScrollViewer>
         </DockPanel>
-    </DockPanel>
-    
+        <DockPanel Name="dpMain" Grid.Row="1" Background="Gray">
+            <Label Style="{StaticResource IconBoardInRDS}" Name="goToBoard" MouseDown="goToBoard_MouseDown" Visibility="Collapsed">
+                <Image Source="Pics/IconBDR.png"/>
+            </Label>
+            <Grid Name="dpBorad" DockPanel.Dock="Right" Background="#e8e8e8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Name="middle">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="210"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Style="{StaticResource stLeftPanel}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="220"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <WrapPanel Margin="0 1 0 1">
+                                <Label Style="{StaticResource stPinkLine}"/>
+                                <Label Content="Меню" Name="tabMenu" MouseDown="tabClick" Width="60" Style="{StaticResource stLeftMenu}"/>
+                            </WrapPanel>
+                            <WrapPanel Margin="0 1 0 1" >
+                                <Label Style="{StaticResource stPinkLine}"/>
+                                <Label Content="Инструменты" Name="tabTools" MouseDown="tabClick" Width="100" Style="{StaticResource stLeftMenu}" Opacity="0.9"/>
+                            </WrapPanel>
+                            <WrapPanel Margin="0 1 0 1">
+                                <Label Style="{StaticResource stPinkLine}"/>
+                                <Label Content="Доп. инструменты" Name="tabExtended" MouseDown="tabClick" Width="140" Style="{StaticResource stLeftMenu}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                        <ScrollViewer Name="pMenu" Visibility="Collapsed" Style="{StaticResource stScroll}">
+                            <StackPanel>
+                                <StackPanel>
+                                    <Label Style="{StaticResource stHeaderMenu}" Content="ФАЙЛ"/>
+                                    <Border Style ="{StaticResource stPanelMenu}">
+                                        <StackPanel>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Открыть" MouseDown="mnOpen_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Сохранить" MouseDown="mnSave_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Сохранить как..." MouseDown="mnSaveAs_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Настройки" MouseDown="mnSetting_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Выход" MouseDown="mnExit_Click"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Style="{StaticResource stHeaderMenu}" Content="ПРАВКА"/>
+                                    <Border Style ="{StaticResource stPanelMenu}">
+                                        <StackPanel>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Отменить"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="Вернуть"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Name="mnDeleteText" Content="Очистить текст" MouseDown="btDelete_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Name="mnDeleteNotes" Content="Очистить маркер" MouseDown="btDelete_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Name="mnDeleteShapes" Content="Очистить фигуры" MouseDown="btDelete_Click"/>
+                                            <Label Style="{StaticResource menuExLblSt}" Name="mnDeleteAll" Content="Очистить всё" MouseDown="btDelete_Click"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Style="{StaticResource stHeaderMenu}" Content="ДОПОЛНИТЕЛЬНО"/>
+                                    <Border Style ="{StaticResource stPanelMenu}">
+                                        <StackPanel>
+                                            <CheckBox  Name="mnRDS" Click="mnRDS_Click" Style="{StaticResource stCheck}" Content="Управление" IsChecked="False"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Style="{StaticResource stHeaderMenu}" Content="СПРАВКА"/>
+                                    <Border Style ="{StaticResource stPanelMenu}">
+                                        <StackPanel>
+                                            <Label Style="{StaticResource menuExLblSt}" Content="О программе" MouseDown="mnAbout_Click"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <ScrollViewer Name="pTool" Visibility="Visible" Style="{StaticResource stScroll}">
+                            <StackPanel>
+                                <StackPanel>
+                                    <Label Content="ДОСКА" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <WrapPanel>
+                                            <ToggleButton Name="btPlay" ToolTip="Вкл/выкл траснляцию доски" Click="btPlay_Click" Style="{StaticResource tBtn}">
+                                                <Image Source="Pics/Board/Play.png"/>
+                                            </ToggleButton>
+                                            <Button Name="btNewBoard" ToolTip="Новая доска" Style="{StaticResource Btn}" Click="btBoard_Click">
+                                                <Image Source="Pics/Board/New.png"/>
+                                            </Button>
+                                            <Button Name="btPrevBoard" ToolTip="Предыдущая доска" Style="{StaticResource BtnArrow}" Click="btBoard_Click">
+                                                <Image Source="Images/PrevBoard.png"/>
+                                            </Button>
+                                            <TextBlock Name="tbCurrentBoard" Style="{StaticResource stBdrNum}"/>
+                                            <Button Name="btNextBoard" ToolTip="Следующая доска" Style="{StaticResource BtnArrow}" Click="btBoard_Click">
+                                                <Image Source="Images/NextBoard.png"/>
+                                            </Button>
+                                        </WrapPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="ИНСТРУМЕНТЫ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <WrapPanel>
+                                            <RadioButton GroupName="InputModes" Name="rbType" Style="{StaticResource stBtnShape}" ToolTip="Печать текста" 
+                        IsChecked="True" Tag="{x:Static Member=InkCanvasEditingMode.None}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Text.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbInk" Style="{StaticResource stBtnShape}" ToolTip="Маркер" 
+                        Tag="{x:Static Member=InkCanvasEditingMode.Ink}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Marker.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbPen" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Полилиния(карандаш)" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.POLYLINE}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Pencil.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbLabel" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Надпись" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.LABEL}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Note.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbLine" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Прямая" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.LINE}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Line.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbRect" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Прямоугольник" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.RECTANGLE}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Rect.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbRoundRect" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Закруглённый прямоугольник" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.ROUND_RECTANGLE}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/RectR.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbEllipse" Style="{StaticResource stBtnShape}" ToolTip="Фигуры: Элипс" 
+                     Tag ="{x:Static local:BOADR_DRAW_SHAPE.ELLIPSE}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Tool/Ellipse.png" Margin="1"/>
+                                            </RadioButton>
+                                        </WrapPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="НАСТРОЙКИ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <WrapPanel>
+                                            <TextBlock Text="Основной цвет:" Style="{StaticResource stMark}"/>
+                                            <cntrl:BrushComboBox x:Name="cbStrokeColor" Width="70" Height="30" IsEmptyColor="False" SelectedIndex="7" 
+                                 ColorChanged="cbStrokeColor_ColorChanged" GotFocus="cbSetting_GotFocus"/>
+                                            <TextBlock Text="Цвет фона:" Style="{StaticResource stMark}"/>
+                                            <cntrl:BrushComboBox x:Name="cbFillColor" Width="70" Height="30" IsEmptyColor="False" 
+                                 ColorChanged="cbFillColor_ColorChanged" GotFocus="cbSetting_GotFocus"/>
+                                            <TextBlock Style="{StaticResource stMark}" Width="60" Text="Толщина:"/>
+                                            <cntrl:ThicknessComboBox x:Name="cbThickness" Width="100" Margin="2" SelectionChanged="cbThickness_SelectionChanged"/>
+                                            <TextBlock Style="{StaticResource stMark}" Width="60" Text="Тип:"/>
+                                            <cntrl:DashComboBox x:Name="cbDash" Width="100" Height="22" Margin="2" SelectionChanged="cbDash_SelectionChanged"/>
+                                            <cntrl:FontComboBox x:Name="cbFontFamaly" Width="110" ToolTip="Шрифт надписи" SelectionChanged="cbFont_SelectionChanged" 
+                                GotFocus="cbSetting_GotFocus" Margin="2 0 0 2"/>
+                                            <ComboBox Name="cbFontSize" Width="48" SelectedIndex="6" ToolTip="Размер шрифта надписи" SelectionChanged="cbFont_SelectionChanged" 
+                      GotFocus="cbSetting_GotFocus" Margin="4 0 0 2">
+                                                <ComboBoxItem>12</ComboBoxItem>
+                                                <ComboBoxItem>14</ComboBoxItem>
+                                                <ComboBoxItem>16</ComboBoxItem>
+                                                <ComboBoxItem>18</ComboBoxItem>
+                                                <ComboBoxItem>20</ComboBoxItem>
+                                                <ComboBoxItem>22</ComboBoxItem>
+                                                <ComboBoxItem>24</ComboBoxItem>
+                                                <ComboBoxItem>26</ComboBoxItem>
+                                                <ComboBoxItem>28</ComboBoxItem>
+                                                <ComboBoxItem>30</ComboBoxItem>
+                                                <ComboBoxItem>32</ComboBoxItem>
+                                                <ComboBoxItem>34</ComboBoxItem>
+                                                <ComboBoxItem>36</ComboBoxItem>
+                                                <ComboBoxItem>38</ComboBoxItem>
+                                                <ComboBoxItem>40</ComboBoxItem>
+                                                <ComboBoxItem>42</ComboBoxItem>
+                                                <ComboBoxItem>44</ComboBoxItem>
+                                                <ComboBoxItem>46</ComboBoxItem>
+                                                <ComboBoxItem>48</ComboBoxItem>
+                                                <ComboBoxItem>50</ComboBoxItem>
+                                                <ComboBoxItem>52</ComboBoxItem>
+                                                <ComboBoxItem>54</ComboBoxItem>
+                                                <ComboBoxItem>56</ComboBoxItem>
+                                                <ComboBoxItem>58</ComboBoxItem>
+                                                <ComboBoxItem>60</ComboBoxItem>
+                                                <ComboBoxItem>62</ComboBoxItem>
+                                                <ComboBoxItem>64</ComboBoxItem>
+                                                <ComboBoxItem>66</ComboBoxItem>
+                                                <ComboBoxItem>68</ComboBoxItem>
+                                                <ComboBoxItem>70</ComboBoxItem>
+                                                <ComboBoxItem>72</ComboBoxItem>
+                                            </ComboBox>
+                                        </WrapPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="УДАЛИТЬ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <WrapPanel>
+                                            <Button Name="btUndo" ToolTip="Отменить изменения" Command="{x:Static ApplicationCommands.Undo}" Style="{StaticResource ResourceKey=UndoRedo}">
+                                                <Image Source="Pics/Edit/Undo.png"/>
+                                            </Button>
+                                            <Button Name="btRedo" ToolTip="Вернуть изменения" Command="{x:Static ApplicationCommands.Redo}" Style="{StaticResource ResourceKey=UndoRedo}">
+                                                <Image Source="Pics/Edit/Redo.png"/>
+                                            </Button>
+                                            <RadioButton GroupName="InputModes" Name="rbSelect" Style="{StaticResource stBtnShape}" 
+                            Tag="{x:Static Member=InkCanvasEditingMode.Select}" 
+                            ToolTip="Редактирование: Выделение заметок и фигур для редактирования/удаления" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Edit/Selection.png" Margin="1"/>
+                                            </RadioButton>
+                                            <RadioButton GroupName="InputModes" Name="rbRemove" Style="{StaticResource stBtnShape}"
+                            ToolTip="Редактирование: Удаление маркера (для удаления фигуры выделете фигуру и нажите DEL)"
+                            Tag="{x:Static Member=InkCanvasEditingMode.EraseByStroke}" Checked="RadioButton_Checked">
+                                                <Image Source="Pics/Edit/DelSelection.png" Margin="1"/>
+                                            </RadioButton>
+                                            <Button Name="btDeleteText" ToolTip="Удалить весь текст" Click="btDelete_Click" Style="{StaticResource Btn}">
+                                                <Image Source="Pics/Edit/DelText.png" Margin="1"/>
+                                            </Button>
+                                            <Button Name="btDeleteNotes" ToolTip="Удалить маркер" Click="btDelete_Click" Style="{StaticResource Btn}">
+                                                <Image Source="Pics/Edit/DelMarker.png"/>
+                                            </Button>
+                                            <Button Name="btDeleteShapes" ToolTip="Удалить все фигуры" Click="btDelete_Click" Style="{StaticResource Btn}">
+                                                <Image Source="Pics/Edit/DelShapes.png"/>
+                                            </Button>
+                                            <Button Name="btDeleteAll" ToolTip="Очистить доску" Click="btDelete_Click" Style="{StaticResource Btn}">
+                                                <Image Source="Pics/Edit/DelAll.png"/>
+                                            </Button>
+                                        </WrapPanel>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="УПРАВЛЕНИЕ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <WrapPanel>
+                                            <CheckBox Name="cbRDS" Click="mnRDS_Click" Style="{StaticResource stCheck}" Content="Управление"/>
+                                        </WrapPanel>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <ScrollViewer Name="pExtended" Visibility="Collapsed" Style="{StaticResource stScroll}">
+                            <StackPanel>
+                                <StackPanel>
+                                    <Label Content="ДОСКИ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <ListBox Name="lbBoards" ToolTip="Для удаления выберете доску и нажмите Delete на клавиатуре" 
+                 SelectionChanged="lbBoards_SelectionChanged" KeyDown="lbBoards_KeyDown" Style="{StaticResource list}"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Label Content="ФИГУРЫ" Style="{StaticResource stHeaderMenu}"/>
+                                    <Border Style="{StaticResource stPanelMenu}">
+                                        <ListBox Name="lbShapes" SelectionMode="Extended" ToolTip="Для редактирования/удаления выберете фигуру(ы)" Style="{StaticResource list}"
+                 SelectionChanged="lbShapes_SelectionChanged" KeyDown="lbShapes_KeyDown" GotFocus="lbShapes_GotFocus"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                    <DockPanel Grid.Column="1" LastChildFill="True" Name="dpMain1">
+                        <!--need to remove-->
+                        <Menu DockPanel.Dock ="Top" Height="25" Name="mnMain" Visibility="Collapsed"/>
+                        <DockPanel Name="dpBorad1" LastChildFill="True">
+                            <ToolBarTray DockPanel.Dock="Top" Name="tbtTop" Height="0" Visibility="Hidden">
+                                <ToolBar Name="tbBoards" Height="30" Band="0"/>
+                                <ToolBar Name="tbShapeSetting" Height="30" IsEnabled="False" Band="0"/>
+                                <ToolBar Name="tbFontSetting" Height="30" IsEnabled="False" Band="0"/>
+                            </ToolBarTray>
+                            <ToolBarTray DockPanel.Dock="Left" Name="tbtLeft" Width ="0" Orientation="Vertical" IsLocked="True" Visibility="Hidden">
+                                <ToolBar Name="tbInput" Width="35"/>
+                                <ToolBar Name="tbEdit" Width="35" Band="1"/>
+                            </ToolBarTray>
+                            <!--end need to remove-->
+                            <ScrollViewer Name="scvBoard" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  Margin="5" Focusable="False">
+                                <InkCanvas x:Name="inkBoard" EditingMode="None" Margin="2" Background="White" Width="800" Height="500" MouseDown="inkBoard_MouseDown" 
+                MouseMove="inkBoard_MouseMove" MouseUp="inkBoard_MouseUp" MouseEnter="inkBoard_MouseEnter" MouseLeave="inkBoard_MouseLeave"
+                PreviewKeyUp="inkBoard_PreviewKeyUp" PreviewKeyDown="inkBoard_PreviewKeyDown" SelectionChanged="inkBoard_SelectionChanged"
+                StrokeCollected="inkBoard_StrokeCollected" StrokeErased="inkBoard_StrokeErased" SelectionMoved="inkBoard_SelectionMoved"
+                SelectionResized="inkBoard_SelectionResized">
+                                    <InkCanvas.DefaultDrawingAttributes>
+                                        <DrawingAttributes FitToCurve="True" IsHighlighter="True"/>
+                                    </InkCanvas.DefaultDrawingAttributes>
+                                    <cntrl:BoardTextBox x:Name="tbBoard" TabSize="4" BorderThickness="0" FontFamily="Courier New" FontSize="24" FontWeight="Bold" 
+                            Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}"
+                            Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}"
+                            GotFocus="tbBoard_GotFocus" TextChanged="tbBoard_TextChanged" LostFocus="tbBoard_LostFocus" SelectionChanged="tbBoard_SelectionChanged">
+                                    </cntrl:BoardTextBox>
+                                </InkCanvas>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </DockPanel>
+                </Grid>
+                <Grid Grid.Row="1" Background="#007ACC" VerticalAlignment="Bottom" Height="22">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Name="sbCoord" Style="{StaticResource tasktxt}" Text="Координаты: "/>
+                    <TextBlock Grid.Column="1" Name="sbTool" Style="{StaticResource tasktxt}" Text="Инструмент: Ввод текста"/>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+
 </Window>

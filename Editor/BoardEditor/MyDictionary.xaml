@@ -1,0 +1,420 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style x:Key="UndoRedo" TargetType="Button">
+        <Setter Property="Height" Value="38"/>
+        <Setter Property="Width" Value="38"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="4">
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="4" Height="32" Width="32"
+                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DeepPink"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Yellow"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="IconBoardInRDS" TargetType="Label" >
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Margin" Value="2 2 0 2"/>
+        <Setter Property="DockPanel.Dock" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="ToolTip" Value="Вернуться к доске"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="DeepPink"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="stTitle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="15 5 5 5"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="DimGray"/>
+        <Setter Property="Text" Value="Teacher Board [Отключено]"/>
+    </Style>
+
+    <Style x:Key="stFuncBtns" TargetType="Label">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Width" Value="30"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="DeepPink"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Opacity" Value="0.7"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="stPinkLine" TargetType="Label">
+        <Setter Property="Background" Value="DeepPink"/>
+        <Setter Property="Width" Value="3"/>
+    </Style>
+
+    <Style x:Key="stLeftMenu" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Margin" Value="0 0 2 0"/>
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <RotateTransform Angle="90"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Opacity}" Value="0.9"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="White" />
+            </MultiDataTrigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="stScroll" TargetType="ScrollViewer">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Grid.Column" Value="1"/>
+    </Style>
+
+    <Style x:Key="stLeftPanel" TargetType="Grid">
+        <Setter Property="Margin" Value="0 5 0 5"/>
+        <Setter Property="Height" Value="auto"/>
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="stHeaderMenu" TargetType="Label">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Margin" Value="0 2 0 2"/>
+        <Setter Property="Width" Value="168"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="stPanelMenu" TargetType="Border">
+        <Setter Property="BorderBrush" Value="DeepPink"/>
+        <Setter Property="BorderThickness" Value="0 2 0 1"/>
+        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Width" Value="168"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+
+    <Style x:Key="stBtn" TargetType="Button">
+        <Setter Property="Height" Value="38"/>
+        <Setter Property="Width" Value="38"/>
+        <Setter Property="Margin" Value="4"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="DeepPink"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="stBtnArr" TargetType="Button">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Margin" Value="0"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="DeepPink"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="stBtnShape" TargetType="{x:Type RadioButton}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Width" Value="38"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="4" Height="32" Width="32" 
+                          HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DeepPink" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Background" Value="Yellow"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Yellow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Btn" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Width" Value="38"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="4" Height="32" Width="32"
+                          HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DeepPink" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Yellow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BtnArrow" TargetType="{x:Type Button}" BasedOn="{StaticResource Btn}">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Height" Value="28"/>
+    </Style>
+
+    <Style x:Key="tBtn" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter Content="{TemplateBinding Content}" Margin="4" Height="32" Width="32"
+                              HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DeepPink" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Yellow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="menuExLblSt" TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Width" Value="164"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="DeepPink"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="false">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="tasktxt" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
+    </Style>
+
+    <Style x:Key="stCheck" TargetType="{x:Type CheckBox}">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="Ivory"/>
+        <Setter Property="Width" Value="164"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="ToolTip" Value="Удалённое управление клиентами"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Label Foreground="Ivory" Background="Transparent" Name="lbl">
+                        <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}"/>
+                    </Label>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="lbl" Property="Background" Value="DeepPink" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="stBdrNum" TargetType="TextBlock">
+        <Setter Property="ToolTip" Value="Текущая доска"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="stMark" TargetType="TextBlock">
+        <Setter Property="Margin" Value="2 0 0 0"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Width" Value="95"/>
+    </Style>
+
+    <Style x:Key="list" TargetType="ListBox">
+        <Setter Property="Width" Value="168"/>
+        <Setter Property="MinHeight" Value="240"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
+    </Style>
+
+    <Style x:Key="tbMB" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+    </Style>
+
+    <Style x:Key="btnMB" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="26"/>
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Background="Gray" Name="bdr">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" CornerRadius="5" Background="DeepPink" Name="myClrLbl" Height="10"/>
+                        <Label Grid.Column="2" Name="lbl" Foreground="Ivory" HorizontalContentAlignment="Left" 
+                VerticalContentAlignment="Center" Margin="5 0 0 0">
+                            <ContentPresenter x:Name="MyContentPresenter"/>
+                        </Label>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="Ok">
+                            <Setter TargetName="myClrLbl" Property="Background" Value="Lime" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bdr" Property="Background" Value="DimGray" />
+                            <Setter TargetName="lbl" Property="Foreground" Value="Yellow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="bCloseMB" TargetType="Label">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Content" Value="X"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Grid.Column" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="DeepPink"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="textMB" TargetType="TextBlock">
+        <Setter Property="Height" Value="90"/>
+        <Setter Property="Width" Value="245"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Justify"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="wndMB" TargetType="Window">
+        <Setter Property="Height" Value="150"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="BorderBrush" Value="DeepPink"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+    </Style>
+
+    <Style x:Key="wndAbout" TargetType="Window">
+        <Setter Property="Height" Value="250"/>
+        <Setter Property="Width" Value="450"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="BorderBrush" Value="DeepPink"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="ResizeMode" Value="NoResize"/>
+    </Style>
+
+    <Style x:Key="tbAbout" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="5 0 0 0"/>
+        <Setter Property="Foreground" Value="Ivory"/>
+    </Style>
+
+    <Style x:Key="tbTextAbout" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="52"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Courier New"/>
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+    </Style>
+
+
+</ResourceDictionary>

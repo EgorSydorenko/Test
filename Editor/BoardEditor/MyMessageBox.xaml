@@ -1,0 +1,30 @@
+﻿<Window x:Class="BoardEditor.MyMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MyMessageBox" Style="{StaticResource wndMB}" WindowStartupLocation="CenterOwner">
+    <Grid Background="#e8e8e8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="Gray" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Информационное сообщение" Style="{StaticResource tbMB}"/>
+            <Label  Name="btnClose" Style="{StaticResource bCloseMB}" MouseDown="btnClose_Click"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Name="lblMsg" Style="{StaticResource textMB}" Height="auto"/>
+        <Grid Grid.Row="2" Margin="0 0 0 3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Style="{StaticResource btnMB}" Content="Ok" Foreground="Lime" Click="OkBtn_MouseDown"/>
+            <Button Grid.Column="0" Style="{StaticResource btnMB}" Content="Отмена" Foreground="LightPink" Name="bCancel" 
+            Click="CancelBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>

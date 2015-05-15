@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("lib/saverloaderlib.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pics/board/new.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pics/board/play.png")]
 
 
