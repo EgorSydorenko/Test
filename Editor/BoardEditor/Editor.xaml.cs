@@ -416,7 +416,8 @@ namespace BoardEditor
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
             Button clickedButton = sender as Button;
-            MenuItem clickedMenu = sender as MenuItem;
+            //MenuItem clickedMenu = sender as MenuItem;
+            Label clickedMenu = sender as Label;
 
             if (clickedButton == null && clickedMenu == null) { return; }
 

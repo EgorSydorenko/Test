@@ -26,7 +26,7 @@ namespace RdsClient
         public int lowImagePort { private set; get; }
 
         public static int index;
-        public static SortedList<string, string> ipAdresses ;
+        public static SortedList<string, int> ipAdresses ;
 
         private static object slockObject;
 
@@ -48,7 +48,7 @@ namespace RdsClient
 
         static RemoteServer() 
         {
-            ipAdresses = new SortedList<string, string>();
+            ipAdresses = new SortedList<string, int>();
             slockObject = new object();
         }
 
@@ -204,23 +204,23 @@ namespace RdsClient
                     {
                         try
                         {
-                            //Int32.TryParse(this.ipAddress.Split(".".ToArray(), StringSplitOptions.RemoveEmptyEntries).Last(), out val);
-                            RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                            Int32.TryParse(this.ipAddress.Split(".".ToArray(), StringSplitOptions.RemoveEmptyEntries).Last(), out val);
+                            RemoteServer.ipAdresses.Add(this.ipAddress, val);
                         }
                         catch (Exception ex)
                         {
                             if (RemoteServer.ipAdresses[this.ipAddress] != null)
                                 {
-                                    //if(RemoteServer.ipAdresses.Keys.Contains())
+                                   //if(RemoteServer.ipAdresses.Keys.Contains())
                                     RemoteServer.ipAdresses.Remove(this.ipAddress);
-                                    RemoteServer.ipAdresses.Add(this.ipAddress, this.ipAddress);
+                                    RemoteServer.ipAdresses.Add(this.ipAddress, val);
                                 }
                             
                         }
                         //RdsControl.ImageContainer.Children.Add(grid);
                         
                         
-                        RdsControl.ImageContainer.Children.Insert(ipAdresses.IndexOfValue(ipAddress), grid);
+                        RdsControl.ImageContainer.Children.Insert(ipAdresses[ipAddress], grid);
                         
                     }
 

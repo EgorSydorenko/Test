@@ -227,6 +227,9 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="Yellow" />
                         </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="Yellow"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

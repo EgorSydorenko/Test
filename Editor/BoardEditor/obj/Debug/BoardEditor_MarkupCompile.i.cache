@@ -4,16 +4,16 @@
 exe
 C#
 .cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\
+F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\
 BoardEditor
 none
 false
 DEBUG;TRACE
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\App.xaml
+F:\_Board(Command)\Test\Editor\BoardEditor\App.xaml
 51941329581
 
-18-1628841683
-211017975098
+1849388375
+21298231265
 Editor.xaml;MyAbout.xaml;MyDictionary.xaml;MyMessageBox.xaml;SettingWindow.xaml;
 images\splash.jpg
 False

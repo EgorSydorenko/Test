@@ -163,3 +163,33 @@ C:\Users\06621\Desktop\Editor (new vers with design)\RdsClientControl\obj\Debug\
 C:\Users\06621\Desktop\Editor (new vers with design)\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
 C:\Users\06621\Desktop\Editor (new vers with design)\RdsClientControl\obj\Debug\RdsClientControl.dll
 C:\Users\06621\Desktop\Editor (new vers with design)\RdsClientControl\obj\Debug\RdsClientControl.pdb
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\ImageController.dll
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+C:\Users\Egor\Documents\GitHub\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
+F:\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+F:\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+F:\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\ImageController.dll
+F:\_Board(Command)\Test\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
