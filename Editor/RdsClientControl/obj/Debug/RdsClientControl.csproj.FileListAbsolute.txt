@@ -193,3 +193,18 @@ C:\Users\Студент\Desktop\Editor\RdsClientControl\obj\Debug\RdsClientContr
 C:\Users\Студент\Desktop\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
 C:\Users\Студент\Desktop\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
 C:\Users\Студент\Desktop\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\bin\Debug\RdsClientControl.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\bin\Debug\RdsClientControl.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\bin\Debug\ImageController.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\bin\Debug\ImageController.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.cs
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.cache
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl_MarkupCompile.lref
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.baml
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.g.resources
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.Images.resources
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.Properties.Resources.resources
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.csproj.GenerateResource.Cache
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\RdsClientControl.pdb

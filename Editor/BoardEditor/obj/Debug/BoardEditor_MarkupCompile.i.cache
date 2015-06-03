@@ -1,20 +1,20 @@
 ﻿BoardEditor
 
 
-exe
+winexe
 C#
 .cs
-F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\
 BoardEditor
 none
 false
 DEBUG;TRACE
-F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\App.xaml
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardEditor\App.xaml
 51941329581
 
-18-276078871
-21-2063938772
+18-1628841683
+211017975098
 Editor.xaml;MyAbout.xaml;MyDictionary.xaml;MyMessageBox.xaml;SettingWindow.xaml;
 images\splash.jpg
-True
+False
 

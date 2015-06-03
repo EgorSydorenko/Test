@@ -46,3 +46,11 @@ C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\ImageController.pdb
 C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
 C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.dll
 C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\bin\Debug\RdsServer.dll.config
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\bin\Debug\RdsServer.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\bin\Debug\RdsServer.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\bin\Debug\ImageController.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\bin\Debug\ImageController.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.pdb

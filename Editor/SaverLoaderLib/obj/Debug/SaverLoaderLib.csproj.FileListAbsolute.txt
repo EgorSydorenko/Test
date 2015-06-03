@@ -23,3 +23,8 @@ C:\Users\Студент\Desktop\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.p
 C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
 C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
 C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+D:\My itStep\Командный проект\EgorGitProject\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+D:\My itStep\Командный проект\EgorGitProject\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
