@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\
 BoardEditor
 none
 false
 DEBUG;TRACE
-F:\_Board(Command)\Test\Editor\BoardEditor\App.xaml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\App.xaml
 51941329581
 
-1849388375
-21298231265
+18-276078871
+21-2063938772
 Editor.xaml;MyAbout.xaml;MyDictionary.xaml;MyMessageBox.xaml;SettingWindow.xaml;
 images\splash.jpg
-False
+True
 

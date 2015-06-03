@@ -374,32 +374,6 @@ C:\Users\06621\Desktop\Editor\BoardEditor\obj\Debug\Editor.baml
 C:\Users\06621\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.g.resources
 C:\Users\06621\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.Properties.Resources.resources
 C:\Users\06621\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.csproj.GenerateResource.Cache
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.exe.config
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.exe
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.pdb
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardControls.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ColorFont.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ImageController.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\RdsClientControl.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\SaverLoaderLib.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\Xceed.Wpf.Toolkit.dll
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardControls.pdb
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ImageController.pdb
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\RdsClientControl.pdb
-C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\SaverLoaderLib.pdb
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.csprojResolveAssemblyReference.cache
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\SettingWindow.baml
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\Editor.g.cs
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\SettingWindow.g.cs
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\App.g.cs
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.cache
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.lref
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\Editor.baml
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.g.resources
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.Properties.Resources.resources
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.csproj.GenerateResource.Cache
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.exe
-C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.pdb
 C:\Users\06690\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.exe.config
 C:\Users\06690\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.exe
 C:\Users\06690\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.pdb
@@ -595,3 +569,64 @@ F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\Editor.baml
 F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\BoardEditor.g.resources
 F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\BoardEditor.Properties.Resources.resources
 F:\_Board(Command)\Test\Editor\BoardEditor\obj\Debug\BoardEditor.csproj.GenerateResource.Cache
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\BoardEditor.exe
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\BoardEditor.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\BoardControls.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\ColorFont.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\ImageController.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\RdsClientControl.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\SaverLoaderLib.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\BoardControls.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\ImageController.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\RdsClientControl.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\bin\Debug\SaverLoaderLib.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor.csprojResolveAssemblyReference.cache
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\MyAbout.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\MyDictionary.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\MyMessageBox.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\SettingWindow.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\App.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\Editor.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\MyAbout.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\MyMessageBox.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\SettingWindow.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\App.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.cache
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.lref
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\Editor.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor.g.resources
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor.Properties.Resources.resources
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardEditor\obj\Debug\BoardEditor.csproj.GenerateResource.Cache
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.exe.config
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.exe
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardEditor.pdb
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardControls.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ColorFont.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\RdsClientControl.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\SaverLoaderLib.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\BoardControls.pdb
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\RdsClientControl.pdb
+C:\Users\Студент\Desktop\Editor\BoardEditor\bin\Debug\SaverLoaderLib.pdb
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\MyAbout.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\MyDictionary.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\MyMessageBox.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\SettingWindow.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\App.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\Editor.g.cs
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\MyAbout.g.cs
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\MyMessageBox.g.cs
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\SettingWindow.g.cs
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\App.g.cs
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.cache
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor_MarkupCompile.lref
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\Editor.baml
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.g.resources
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.Properties.Resources.resources
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.csproj.GenerateResource.Cache
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.exe
+C:\Users\Студент\Desktop\Editor\BoardEditor\obj\Debug\BoardEditor.pdb

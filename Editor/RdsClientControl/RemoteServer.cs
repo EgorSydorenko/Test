@@ -218,9 +218,15 @@ namespace RdsClient
                             
                         }
                         //RdsControl.ImageContainer.Children.Add(grid);
-                        
-                        
-                        RdsControl.ImageContainer.Children.Insert(ipAdresses[ipAddress], grid);
+
+                        if (ipAdresses[ipAddress] <= ipAdresses.Count)
+                        {
+                            RdsControl.ImageContainer.Children.Insert(ipAdresses[ipAddress], grid);
+                        }
+                        else
+                        {
+                            RdsControl.ImageContainer.Children.Add(grid);
+                        }
                         
                     }
 

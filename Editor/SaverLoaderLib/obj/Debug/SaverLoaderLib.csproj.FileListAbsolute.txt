@@ -18,3 +18,8 @@ d:\GitHub\Test\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
 d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
 d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
 d:\GitHub\Test\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb
+C:\Users\Студент\Desktop\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.dll
+C:\Users\Студент\Desktop\Editor\SaverLoaderLib\bin\Debug\SaverLoaderLib.pdb
+C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.dll
+C:\Users\Студент\Desktop\Editor\SaverLoaderLib\obj\Debug\SaverLoaderLib.pdb

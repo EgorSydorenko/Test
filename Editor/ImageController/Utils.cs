@@ -26,11 +26,11 @@ namespace WorkWithImage
             int sector_width = 0;
             int sector_height = 0;
 
-            for (int i = 20; i < width; i++)
+            for (int i = 3; i < width; i++)
             {
-                for (int j = 20; j < height; j++)
+                for (int j = 3; j < height; j++)
                 {
-                    if (Math.Abs((i + 1) * (j + 1)) > 800 && Math.Abs((i + 1) * (j + 1)) < 1400 && width % (i + 1) == 0 && height % (j + 1) == 0)
+                    if (Math.Abs((i + 1) * (j + 1)) > 600 && Math.Abs((i + 1) * (j + 1)) < 2000 && width % (i + 1) == 0 && height % (j + 1) == 0)
                     {
                         sector_height = j + 1;
                         sector_width = i + 1;

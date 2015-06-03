@@ -38,3 +38,11 @@ C:\Users\06541\Desktop\EgorGitProject\Editor\RdsServer\bin\Debug\ImageController
 C:\Users\06541\Desktop\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
 C:\Users\06541\Desktop\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.dll
 C:\Users\06541\Desktop\EgorGitProject\Editor\RdsServer\obj\Debug\RdsServer.pdb
+C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\RdsServer.dll.config
+C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\RdsServer.dll
+C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\RdsServer.pdb
+C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\Editor\RdsServer\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.dll
+C:\Users\Студент\Desktop\Editor\RdsServer\obj\Debug\RdsServer.pdb

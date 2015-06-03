@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\_Board(Command)\Test\Editor\BoardClient\obj\Debug\
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\
 BoardClient
 none
 false
 DEBUG;TRACE
-F:\_Board(Command)\Test\Editor\BoardClient\App.xaml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\App.xaml
 2904563836
 5-1096553009
-11953678243
-19-2058938872
+11628210997
+19-1010514860
 Client.xaml;SettingWindow.xaml;
 
 False

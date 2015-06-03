@@ -27,3 +27,9 @@ C:\Users\06621\Desktop\EgorGitProject\Editor\ImageController\bin\Debug\ImageCont
 C:\Users\06621\Desktop\EgorGitProject\Editor\ImageController\obj\Debug\ImageController.csprojResolveAssemblyReference.cache
 C:\Users\06621\Desktop\EgorGitProject\Editor\ImageController\obj\Debug\ImageController.dll
 C:\Users\06621\Desktop\EgorGitProject\Editor\ImageController\obj\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\Editor\ImageController\bin\Debug\ImageController.dll.config
+C:\Users\Студент\Desktop\Editor\ImageController\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\Editor\ImageController\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\Editor\ImageController\obj\Debug\ImageController.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\Editor\ImageController\obj\Debug\ImageController.dll
+C:\Users\Студент\Desktop\Editor\ImageController\obj\Debug\ImageController.pdb

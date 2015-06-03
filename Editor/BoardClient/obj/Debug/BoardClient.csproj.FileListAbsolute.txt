@@ -239,30 +239,6 @@ C:\Users\06541\Desktop\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.c
 C:\Users\06621\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe.config
 C:\Users\06621\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
 C:\Users\06621\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe.config
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.pdb
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardControls.dll
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\ImageController.dll
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\RdsServer.dll
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\WindowResizer.dll
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\Xceed.Wpf.Toolkit.dll
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\ImageController.pdb
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\RdsServer.pdb
-C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardControls.pdb
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\Client.baml
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.baml
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\Client.g.cs
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\App.g.cs
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.g.resources
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.Properties.Resources.resources
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
-C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe.config
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.pdb
@@ -287,3 +263,51 @@ D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\o
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.exe
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe.config
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.exe
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardControls.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\ImageController.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\RdsServer.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\WindowResizer.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\ImageController.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\RdsServer.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardControls.pdb
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\Client.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.baml
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\Client.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\App.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.g.resources
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.Properties.Resources.resources
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe.config
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardClient.pdb
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardControls.dll
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\ImageController.dll
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\RdsServer.dll
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\WindowResizer.dll
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\ImageController.pdb
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\RdsServer.pdb
+C:\Users\Студент\Desktop\Editor\BoardClient\bin\Debug\BoardControls.pdb
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\Client.baml
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.baml
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\Client.g.cs
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\App.g.cs
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.g.resources
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.Properties.Resources.resources
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
+C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb

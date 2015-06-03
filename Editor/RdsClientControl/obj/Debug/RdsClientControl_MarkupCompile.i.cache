@@ -4,7 +4,7 @@
 library
 C#
 .cs
-F:\_Board(Command)\Test\Editor\RdsClientControl\obj\Debug\
+F:\itStep\Командный проект\EgorGitProject\Editor\RdsClientControl\obj\Debug\
 RdsClientControl
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 11894449319
 
-15232945575
-16-304030642
+15-92521671
+16-325956433
 RdsClientControl.xaml;
 
 True

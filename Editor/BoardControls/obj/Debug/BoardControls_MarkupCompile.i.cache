@@ -4,7 +4,7 @@
 library
 C#
 .cs
-F:\_Board(Command)\Test\Editor\BoardControls\obj\Debug\
+F:\itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\
 BoardEditor
 none
 false
@@ -12,7 +12,7 @@ DEBUG;TRACE
 
 5104357450
 
-13547089522
+13221622276
 141012385901
 About.xaml;BrushComboBox.xaml;DashComboBox.xaml;FontComboBox.xaml;ThicknessComboBox.xaml;
 
