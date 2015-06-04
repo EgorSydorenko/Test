@@ -82,7 +82,7 @@ namespace RdsClient
             }
         }
 
-        public void StartPreview()
+        public bool StartPreview()
         {
             try
             {
@@ -90,16 +90,12 @@ namespace RdsClient
                 lowPicsTask.Start();
                 RdsControl.ImageContainer.Dispatcher.Invoke(new Action(() =>
                 {
-                    //MainWindow.Images[this.Number].Tag = this.ipAddress;
-                    //Border bd = new Border();
-                    //bd.BorderThickness = 2;
-                    //bd.BorderBrush = 
 
                     Grid grid = new Grid();
                     grid.Margin = new Thickness(5);
                     grid.Background = System.Windows.Media.Brushes.Black;
                     grid.Cursor = System.Windows.Input.Cursors.Hand;
-                    //grid.ShowGridLines = true;
+
                     grid.Height = 230;
                     grid.Width = 250;
                     grid.Tag = this.ipAddress;
@@ -108,16 +104,15 @@ namespace RdsClient
                     gridRow2.Height = new GridLength(1, GridUnitType.Star);
                     RowDefinition gridRow1 = new RowDefinition();
                     gridRow1.Height = new GridLength(30);
-                    //RowDefinition gridRow3 = new RowDefinition();
-                    //gridRow3.Height
+
                     grid.RowDefinitions.Add(gridRow1);
                     grid.RowDefinitions.Add(gridRow2);
                     Border bd = new Border();
                     bd.Background = System.Windows.Media.Brushes.White;
                     bd.BorderThickness = new Thickness(2);
-                    //bd.Width = 246;
-                    //bd.Height = 30;
+
                     #region Canvas Panel
+
                     Canvas canvas = new Canvas();
                     canvas.Height = 30;
                     canvas.Width = 250;
@@ -174,6 +169,7 @@ namespace RdsClient
                     Canvas.SetTop(img2, 3);
                     canvas.Children.Add(img2);
                     #endregion
+
                     Label lbl = new Label();
                     lbl.Content = String.Format("IpAddress: {0}", this.ipAddress);
                     lbl.VerticalAlignment = VerticalAlignment.Center;
@@ -210,11 +206,11 @@ namespace RdsClient
                         catch (Exception ex)
                         {
                             if (RemoteServer.ipAdresses[this.ipAddress] != null)
-                                {
-                                   //if(RemoteServer.ipAdresses.Keys.Contains())
-                                    RemoteServer.ipAdresses.Remove(this.ipAddress);
-                                    RemoteServer.ipAdresses.Add(this.ipAddress, val);
-                                }
+                            {
+                                //if(RemoteServer.ipAdresses.Keys.Contains())
+                                RemoteServer.ipAdresses.Remove(this.ipAddress);
+                                RemoteServer.ipAdresses.Add(this.ipAddress, val);
+                            }
                             
                         }
                         //RdsControl.ImageContainer.Children.Add(grid);
@@ -227,17 +223,15 @@ namespace RdsClient
                         {
                             RdsControl.ImageContainer.Children.Add(grid);
                         }
-                        
                     }
-
-
-
-                    
-
                 }));
+                
             }
-            catch { }
-
+            catch 
+            {
+                return false;
+            }
+            return true;
         }
 
 
@@ -252,16 +246,6 @@ namespace RdsClient
         public void StartView()
         {
             this.imageClient = new TcpClient(ipAddress, imagePort);
-            //var result = this.imageClient.BeginConnect(ipAddress, imagePort,null,null);
-            //var success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(2));
-            //if (!success)
-            //{
-            //    Console.WriteLine("Соединение не установлено");
-            //    throw new Exception("Connection Timeout");
-            //}
-            //Console.WriteLine("Соединение установлено");
-           // imageClient.SendTimeout = 10000;
-            //imageClient.ReceiveTimeout
             this.controlsClient = new TcpClient(ipAddress, controlPort);
 
             imageTask.Start();
@@ -274,9 +258,10 @@ namespace RdsClient
             MemoryStream ms = new MemoryStream();
             NetworkStream ns = lowPicsClient.GetStream();
             var msg = Encoding.Unicode.GetBytes("PREVIEW");
-            try
+
+            while (true)
             {
-                while (true)
+                try
                 {
                     ms.SetLength(0);
                     ns.Write(msg, 0, msg.Length);
@@ -303,24 +288,29 @@ namespace RdsClient
                     }));
                     Thread.Sleep(TimeSpan.FromSeconds(15));
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
+                    if(ex.Message == "Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            RdsControl.SetMainImageNewPic.Dispatcher.Invoke(new Action(() =>
+                            {
+                                RdsControl.MainWind.DeletePicture(ipAddress);
+                                RdsControl.MainWind.CloseOutside();
+                            }));
+                            StopViewControl();
+                        }
+                        catch { }
+                    }
+                }
 
             }
-            finally
-            {
-                try
-                {
-                    RdsControl.SetMainImageNewPic.Dispatcher.Invoke(new Action(() =>
-                    {
-                        RdsControl.MainWind.DeletePicture(ipAddress);
-                        RdsControl.MainWind.CloseOutside();
-                    }));
-                    StopViewControl();
-                }
-                catch { }
-            }
+
         }
 
         void RunControl()

@@ -194,7 +194,10 @@ namespace RdsClientControl
                 this.front_canvas.Visibility = System.Windows.Visibility.Visible;
                 this.RdsIp.Text = String.Format("Ip address:[{0}]", currentServer.ipAddress);
                 if (FullScreen != null)
-                    FullScreen();   
+                {
+                    FullScreen();
+                    isFullScreen = true;
+                }
             }
             catch
             {
@@ -247,16 +250,6 @@ namespace RdsClientControl
                             this.message = String.Format("Move|{0},{1}", unscaled_p.X, unscaled_p.Y);
                             this.currentServer.StartControl(message);
                         }
-                        //}
-                        //else
-                        //{
-                        //    System.Windows.Point unscaled_p = Mouse.GetPosition(ViewImage);
-                        //    lock (lockObjeck)
-                        //    {
-                        //        this.message = String.Format("Move|{0},{1}", unscaled_p.X, unscaled_p.Y);
-                        //        this.currentServer.StartControl(message);
-                        //    }
-                        //}
                         this.ViewImage.Focus();
                     }
                 }
@@ -337,26 +330,36 @@ namespace RdsClientControl
             {
                 if (!isFullScreen)
                 {
-                    lastState.lastState = mainWindow.WindowState;
-                    lastState.Top = mainWindow.Top;
-                    lastState.Left = mainWindow.Left;
-                    mainWindow.WindowStyle = WindowStyle.None;
-                    mainWindow.WindowState = WindowState.Maximized;
-                    mainWindow.Topmost = true;
-                    mainWindow.Top = 0;
-                    mainWindow.Left = 0;
-                    //this.MyMenu.Visibility = Visibility.Hidden;
-                    //this.MyMenu.Height = 0;
-                    OneToOne_Click(null, null);
+                    //lastState.lastState = mainWindow.WindowState;
+                    //lastState.Top = mainWindow.Top;
+                    //lastState.Left = mainWindow.Left;
+                    //mainWindow.WindowStyle = WindowStyle.None;
+                    //mainWindow.WindowState = WindowState.Maximized;
+                    //mainWindow.Topmost = true;
+                    //mainWindow.Top = 0;
+                    //mainWindow.Left = 0;
+
+                    //OneToOne_Click(null, null);
+                    if (FullScreen != null)
+                    {
+                        FullScreen();
+                        //isFullScreen = true;
+                    }
+
                 }
                 else
                 {
-                    mainWindow.WindowState = this.lastState.lastState;
-                    mainWindow.WindowStyle = WindowStyle.ThreeDBorderWindow;
-                    //this.MyMenu.Visibility = Visibility.Visible;
-                    mainWindow.Left = lastState.Left;
-                    mainWindow.Top = lastState.Top;
-                    //this.MyMenu.Height = 18;
+                    if (CloseFullScreen != null)
+                    {
+                        CloseFullScreen();
+                        isFullScreen = true;
+                    }
+                    //mainWindow.WindowState = this.lastState.lastState;
+                    //mainWindow.WindowStyle = WindowStyle.ThreeDBorderWindow;
+
+                    //mainWindow.Left = lastState.Left;
+                    //mainWindow.Top = lastState.Top;
+
 
                 }
                 isFullScreen = !isFullScreen;
@@ -439,7 +442,10 @@ namespace RdsClientControl
                     FullScreen_Click(null, null);
 
                 if (CloseFullScreen != null)
-                    CloseFullScreen();   
+                {
+                    CloseFullScreen();
+                    isFullScreen = false;
+                }
         }
 
         private void Maximize_MouseDown(object sender, MouseButtonEventArgs e)

@@ -144,22 +144,41 @@ C:\Users\Студент\Desktop\Editor\BoardControls\obj\Debug\DashComboBox.baml
 C:\Users\Студент\Desktop\Editor\BoardControls\obj\Debug\BoardControls.g.resources
 C:\Users\Студент\Desktop\Editor\BoardControls\obj\Debug\BoardControls.dll
 C:\Users\Студент\Desktop\Editor\BoardControls\obj\Debug\BoardControls.pdb
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\bin\Debug\BoardControls.dll
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\bin\Debug\BoardControls.pdb
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls.csprojResolveAssemblyReference.cache
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\About.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\FontComboBox.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\ThicknessComboBox.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\About.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BrushComboBox.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\DashComboBox.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\FontComboBox.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\ThicknessComboBox.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.cache
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.lref
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BrushComboBox.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\DashComboBox.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls.g.resources
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls.dll
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardControls\obj\Debug\BoardControls.pdb
+C:\Users\Egor\Desktop\Editor\BoardControls\bin\Debug\BoardControls.dll
+C:\Users\Egor\Desktop\Editor\BoardControls\bin\Debug\BoardControls.pdb
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\About.baml
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\FontComboBox.baml
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\ThicknessComboBox.baml
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\About.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BrushComboBox.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\DashComboBox.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\FontComboBox.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\ThicknessComboBox.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.cache
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.lref
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BrushComboBox.baml
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\DashComboBox.baml
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls.g.resources
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls.dll
+C:\Users\Egor\Desktop\Editor\BoardControls\obj\Debug\BoardControls.pdb
+C:\Users\06541\Desktop\Editor\BoardControls\bin\Debug\BoardControls.dll
+C:\Users\06541\Desktop\Editor\BoardControls\bin\Debug\BoardControls.pdb
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls.csprojResolveAssemblyReference.cache
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\About.baml
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\FontComboBox.baml
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\ThicknessComboBox.baml
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\About.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BrushComboBox.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\DashComboBox.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\FontComboBox.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\ThicknessComboBox.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.cache
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls_MarkupCompile.lref
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BrushComboBox.baml
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\DashComboBox.baml
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls.g.resources
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls.dll
+C:\Users\06541\Desktop\Editor\BoardControls\obj\Debug\BoardControls.pdb

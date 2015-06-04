@@ -328,7 +328,8 @@
                                     <cntrl:BoardTextBox x:Name="tbBoard" TabSize="4" BorderThickness="0" FontFamily="Courier New" FontSize="24" FontWeight="Bold" 
                             Width="{Binding Path=ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}"
                             Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type InkCanvas}}}"
-                            GotFocus="tbBoard_GotFocus" TextChanged="tbBoard_TextChanged" LostFocus="tbBoard_LostFocus" SelectionChanged="tbBoard_SelectionChanged">
+                            GotFocus="tbBoard_GotFocus" TextChanged="tbBoard_TextChanged"   SelectionChanged="tbBoard_SelectionChanged"  LostFocus="tbBoard_LostFocus">
+
                                     </cntrl:BoardTextBox>
                                 </InkCanvas>
                             </ScrollViewer>

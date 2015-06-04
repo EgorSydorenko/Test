@@ -50,10 +50,14 @@ namespace RdsClient
                     var server = new RemoteServer(msg);
                     if (!this.servers.ContainsKey(server.ipAddress))
                     {
-                        servers.Add(server.ipAddress, server);
-                        server.StartPreview();
-                        server.Number = count;
-                        count++;
+                       
+                        if(server.StartPreview())
+                        {
+                            servers.Add(server.ipAddress, server);
+                            server.Number = count;
+                            count++;
+                        }
+                        
                     }
                 }
             }

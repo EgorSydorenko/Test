@@ -129,11 +129,19 @@ namespace WorkWithImage
         {
             public static BitmapSource CreateNewImage(ClientScreenShotData shot)
             {
-                int bitsPerPixel = ((int)137224 & 0xff00) >> 8;
-                int bytesPerPixel = (bitsPerPixel + 7) / 8;
-                int stride = 4 * ((shot.widthResolution * bytesPerPixel + 3) / 4);
-                BitmapSource img = BitmapSource.Create(shot.widthResolution, shot.heightResolution, 96, 96, System.Windows.Media.PixelFormats.Bgr24, null, shot.colorPackage, stride);
-                return img;
+                try 
+                { 
+                    int bitsPerPixel = ((int)137224 & 0xff00) >> 8;
+                    int bytesPerPixel = (bitsPerPixel + 7) / 8;
+                    int stride = 4 * ((shot.widthResolution * bytesPerPixel + 3) / 4);
+                    BitmapSource img = BitmapSource.Create(shot.widthResolution, shot.heightResolution, 96, 96, System.Windows.Media.PixelFormats.Bgr24, null, shot.colorPackage, stride);
+                    return img;
+                 }
+                catch(Exception ex)
+                {
+                    return CreateNewImage(shot);
+                }
+               
             }
 
             public static void ChangeCurrentPictureNew(ClientScreenShotData data, byte[] fileBytes, List<int> blocks, int widthResolution, int heightResolution)

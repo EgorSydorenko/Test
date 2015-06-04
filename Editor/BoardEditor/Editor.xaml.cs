@@ -214,13 +214,29 @@ namespace BoardEditor
 
         void rds_CloseFullScreen()
         {
+            this.Height = this.wHeight;
+            this.Width = this.wWidth;
+            this.Top = this.wTop;
+            this.Left = this.wLeft;
             this.pTop.Visibility = System.Windows.Visibility.Visible;
             this.pTopGrid.Height = new GridLength(30); 
             this.goToBoard.Visibility = System.Windows.Visibility.Visible;
+
         }
 
         void rds_FullScreen()
         {
+
+            this.wHeight = this.Height;
+            this.wWidth = this.Width;
+            this.wTop = this.Top;
+            this.wLeft = this.Left;
+            this.Height = SystemParameters.PrimaryScreenHeight;
+            this.Width = SystemParameters.PrimaryScreenWidth;
+            this.Top = 0;
+            this.Left = 0;
+
+
             this.pTop.Visibility = System.Windows.Visibility.Collapsed;
             this.pTopGrid.Height = new GridLength(0); 
             this.goToBoard.Visibility = System.Windows.Visibility.Collapsed;
@@ -323,6 +339,7 @@ namespace BoardEditor
         {
             try
             {
+                //tbBoard_GotFocus(sender, e);
                 Rectangle highlightingRect = LogicalTreeHelper.FindLogicalNode(this, "rcHighlight") as Rectangle;
                 if (highlightingRect == null)
                 {
@@ -383,7 +400,7 @@ namespace BoardEditor
 #endif
             }
         }
-                
+    
         #endregion
 
         #region ПАНЕЛИ ИНСТРУМЕНТОВ
@@ -733,7 +750,7 @@ namespace BoardEditor
 
         private void inkBoard_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (this._drawingHelper._drawMode == BOADR_DRAW_SHAPE.NONE) { return; }
+            if (this._drawingHelper._drawMode == BOADR_DRAW_SHAPE.NONE) { this.tbBoard.Focus(); return; }
 
             if (e.ChangedButton == MouseButton.Left)
             {
@@ -1130,10 +1147,10 @@ namespace BoardEditor
                 this.wWidth = this.Width;
                 this.wTop = this.Top;
                 this.wLeft = this.Left;
-                this.Height = SystemParameters.VirtualScreenHeight;
-                this.Width = SystemParameters.VirtualScreenWidth;
-                this.Top = SystemParameters.VirtualScreenTop;
-                this.Left = SystemParameters.VirtualScreenLeft;
+                //this.Height = SystemParameters.PrimaryScreenHeight;
+               // this.Width = SystemParameters.PrimaryScreenWidth;
+                //this.Top = 0;
+                //this.Left = 0;
                 this.title.Text = "RDS Preview";
                 this.dpRDS.Margin = new Thickness(2);
                 this.cbRDS.IsChecked = true;
@@ -1714,22 +1731,22 @@ namespace BoardEditor
         }
         private void Resize_Click(object sender, MouseButtonEventArgs e)
         {
-            if (this.Height != SystemParameters.VirtualScreenHeight ||
-                    this.Width != SystemParameters.VirtualScreenWidth ||
-                        this.Top != SystemParameters.VirtualScreenTop ||
-                            this.Left != SystemParameters.VirtualScreenLeft)
+            if (this.Height != SystemParameters.PrimaryScreenHeight ||
+                    this.Width != SystemParameters.PrimaryScreenWidth||
+                        this.Top != 0 ||
+                            this.Left != 0)
             {
-                this.Height = SystemParameters.VirtualScreenHeight;
-                this.Width = SystemParameters.VirtualScreenWidth;
-                this.Top = SystemParameters.VirtualScreenTop;
-                this.Left = SystemParameters.VirtualScreenLeft;
+                this.Height = SystemParameters.PrimaryScreenHeight;
+                this.Width = SystemParameters.PrimaryScreenWidth;
+                this.Top = 0;
+                this.Left = 0;
             }
             else
             {
                 this.Width = this.MinWidth;
                 this.Height = this.MinHeight;
-                this.Top = SystemParameters.VirtualScreenHeight / 2 - this.Height / 2;
-                this.Left = SystemParameters.VirtualScreenWidth / 2 - this.Width / 2;
+                this.Top = SystemParameters.PrimaryScreenHeight / 2 - this.Height / 2;
+                this.Left = SystemParameters.PrimaryScreenWidth / 2 - this.Width / 2;
             }
             //if (this.Height != SystemParameters.WorkArea.Height ||
             //        this.Width != SystemParameters.WorkArea.Width ||
@@ -1772,7 +1789,6 @@ namespace BoardEditor
         private void goToBoard_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.goToBoard.Visibility = System.Windows.Visibility.Collapsed;
-
             this.cbRDS.IsChecked = false;
             this.mnRDS.IsChecked = false;
             this.dpMain.Children.Add(this.dpBorad);

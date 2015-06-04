@@ -287,12 +287,33 @@ C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.Propert
 C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
 C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
 C:\Users\Студент\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.baml
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\App.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
-D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe.config
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\BoardClient.pdb
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\BoardControls.dll
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\ImageController.dll
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\RdsServer.dll
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\WindowResizer.dll
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\ImageController.pdb
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\RdsServer.pdb
+C:\Users\Egor\Desktop\Editor\BoardClient\bin\Debug\BoardControls.pdb
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\Client.baml
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.baml
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\Client.g.cs
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\App.g.cs
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.g.resources
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.Properties.Resources.resources
+C:\Users\Egor\Desktop\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache
+C:\Users\06541\Desktop\Editor\BoardClient\bin\Debug\BoardClient.exe.config
+C:\Users\06541\Desktop\Editor\BoardClient\obj\Debug\BoardClient.exe
+C:\Users\06541\Desktop\Editor\BoardClient\obj\Debug\BoardClient.pdb
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe.config
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.exe
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardClient.pdb
@@ -304,8 +325,14 @@ D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\b
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\ImageController.pdb
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\RdsServer.pdb
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\bin\Debug\BoardControls.pdb
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csprojResolveAssemblyReference.cache
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\Client.baml
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.baml
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\Client.g.cs
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\SettingWindow.g.cs
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\App.g.cs
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_Content.g.cs
+D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient_MarkupCompile.cache
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.g.resources
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.Properties.Resources.resources
 D:\My itStep\Командный проект\EgorGitProject\Editor\BoardClient\obj\Debug\BoardClient.csproj.GenerateResource.Cache

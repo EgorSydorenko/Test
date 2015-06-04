@@ -82,7 +82,7 @@
         <Setter Property="Margin" Value="0 0 2 0"/>
         <Setter Property="LayoutTransform">
             <Setter.Value>
-                <RotateTransform Angle="90"/>
+                <RotateTransform Angle="270"/>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
